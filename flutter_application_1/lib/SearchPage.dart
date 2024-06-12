@@ -14,21 +14,22 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage>{
   final TextEditingController _searchController = TextEditingController();
  final List<TrashItem> _allItems = allItems;
+  List<TrashItem> _filteredItems = []; // Tilføj denne linje for at definere _filteredItems
+
 
 
   @override
   void initState() {
     super.initState();
+    _filteredItems = _allItems; // Initialiser _filteredItems med alle elementer i starten
   }
 
   void _filterItems(String query) {
-    final filtered = _allItems.where((item) {
-      return item.name.toLowerCase().contains(query.toLowerCase());
-    }).toList();
-
-    // setState(() {
-    //   allItems. = filtered;
-    // });
+    setState(() {
+      _filteredItems = _allItems.where((item) {
+        return item.name.toLowerCase().contains(query.toLowerCase());
+      }).toList();
+    });
   }
 
   @override
@@ -54,14 +55,15 @@ class _SearchPageState extends State<SearchPage>{
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: allItems.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(allItems[index].name),
-                );
-              },
-            ),
-          ),
+            itemCount: _filteredItems.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(_filteredItems[index].name),
+      );
+    },
+  ),
+),
+
           const NavigationBarr(),
         ],
       ),
