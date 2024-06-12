@@ -16,22 +16,22 @@ class NavigationBarr extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-            icon: const Icon(Icons.search, color: Color.fromARGB(255, 36, 100, 38)),
-            tooltip: 'Search',
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SearchPage()),
-              );
-            },
-          ),
-          IconButton(
             icon: const Icon(Icons.home, color: Color.fromARGB(255, 36, 100, 38)),
             tooltip: 'Home',
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const HomePage()),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.search, color: Color.fromARGB(255, 36, 100, 38)),
+            tooltip: 'Search',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SearchPage()),
               );
             },
           ),
