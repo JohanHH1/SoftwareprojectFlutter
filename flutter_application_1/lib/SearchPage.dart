@@ -3,6 +3,7 @@ import 'TrashItemList.dart';
 import 'navigation_bar.dart';
 import 'main.dart';
 import 'TrashItem.dart';
+import 'trash_information_page.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -37,6 +38,7 @@ class _SearchPageState extends State<SearchPage>{
     return Scaffold(
       appBar: AppBar(
         title: const Text('Search Page'),
+        automaticallyImplyLeading: false, // Fjern tilbagepilen
       ),
       body: Column(
         children: [
@@ -54,14 +56,24 @@ class _SearchPageState extends State<SearchPage>{
             ),
           ),
           Expanded(
-            child: ListView.builder(
-            itemCount: _filteredItems.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(_filteredItems[index].name),
-      );
-    },
-  ),
+            child:ListView.builder(
+  itemCount: _filteredItems.length,
+  itemBuilder: (context, index) {
+    return ListTile(
+      title: Text(_filteredItems[index].name),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => trash_information_page(trashItem: _filteredItems[index]),
+          ),
+        );
+      },
+    );
+  },
+),
+
+
 ),
 
           const NavigationBarr(),
