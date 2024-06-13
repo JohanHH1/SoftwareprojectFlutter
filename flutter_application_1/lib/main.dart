@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/HyppigesteAffaldstyper.dart';
+import 'LocationPage.dart';
 import 'TrashItem.dart';
 import 'TrashItemList.dart';
 import 'navigation_bar.dart';
@@ -38,14 +39,15 @@ class HomePage extends StatelessWidget {
         title: const Text('Sorteringshjælperen',
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 30,
+          fontSize: 32,
           ),
         ),
       ),
-      body: ListView(
+      body: Center( 
+        child: ListView(
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
+            padding: EdgeInsets.fromLTRB(16, 40, 12, 4),
             child: Container(
               height: 200,
               child: RichText(
@@ -53,15 +55,16 @@ class HomePage extends StatelessWidget {
                   text: 'Velkommen!',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
             ), 
           ),
+          HyppigsteAffaldstyper(),
           Padding(
-            padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
+            padding: EdgeInsets.fromLTRB(12, 1, 12, 40),
             child: Container(
               height: 200,
               child: ListView(scrollDirection: Axis.horizontal,
@@ -110,9 +113,25 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          HyppigsteAffaldstyper(),
-
+          //HyppigsteAffaldstyper(),
+          Padding(
+              padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
+              child: Container(
+                height: 200,
+                child: RichText(
+                  text: const TextSpan(
+                    text: 'Find vej til din\ngenbrugsstation ↓',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ), 
+            ),
         ],
+        ),
       ),
       bottomNavigationBar: NavigationBarr(), 
     );
