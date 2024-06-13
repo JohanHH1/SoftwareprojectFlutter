@@ -3,8 +3,6 @@ import 'TrashItem.dart';
 import 'TrashItemList.dart';
 import 'navigation_bar.dart';
 import 'SearchPage.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
 
 
 void main() => runApp(const MyApp());
@@ -15,7 +13,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Navigation Example',
       home: HomePage(),
     );
@@ -44,24 +41,4 @@ class HomePage extends StatelessWidget {
      ),
     );
   }
-
-  Widget content() {
-    return FlutterMap(
-      options: const MapOptions(
-        initialCenter: LatLng(55.676098, 12.568337),
-        initialZoom: 11,
-        interactionOptions:
-          InteractionOptions(flags: ~InteractiveFlag.doubleTapZoom) 
-        ),
-      children: [
-        openStreetMapTileLayer,
-      ],
-    );
-  }
 }
-
-TileLayer get openStreetMapTileLayer => TileLayer(
-  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-  userAgentPackageName: 'dev.fleaflet.flutter_map.example',
-);
-

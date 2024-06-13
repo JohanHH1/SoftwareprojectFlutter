@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'SearchPage.dart';
 import 'main.dart';
 import 'SearchPage.dart';
+import 'LocationPage.dart';
 
 class NavigationBarr extends StatelessWidget {
   const NavigationBarr({super.key});
@@ -39,14 +40,11 @@ class NavigationBarr extends StatelessWidget {
             icon: const Icon(Icons.pin_drop, color: Color.fromARGB(255, 36, 100, 38)),
             tooltip: 'Map',
             onPressed: () {
-<<<<<<< Updated upstream
-              // Add your onPressed logic here
-=======
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => const LocationPage()),
               );
->>>>>>> Stashed changes
+
             },
           ),
         ],
