@@ -51,6 +51,9 @@
 	<string>We need your location to provide better service.</string>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
+	<key>MinimumOSVersion</key>
+	<string>14.0</string>
+
 
 </dict>
 </plist>
