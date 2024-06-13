@@ -11,4 +11,23 @@ class TrashItem {
     this.imageUrl,
     this.tips,
   });
+
+// Konverterer TrashItem til et Firestore-dokument
+  Map<String, dynamic> toFirestore() {
+    return {
+      'name': name,
+      'sortingType': sortingType,
+      'imageUrl': imageUrl,
+      'tips': tips,
+    };
+  }
+  // Opretter en TrashItem fra et Firestore-dokument
+  factory TrashItem.fromFirestore(Map<String, dynamic> doc) {
+    return TrashItem(
+      name: doc['name'],
+      sortingType: doc['sortingType'],
+      imageUrl: doc['imageUrl'],
+      tips: doc['tips'],
+    );
+  }
 }
