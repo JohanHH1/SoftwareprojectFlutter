@@ -14,7 +14,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage>{
   final TextEditingController _searchController = TextEditingController();
- final List<TrashItem> _allItems = allItems;
+  final List<TrashItem> _allItems = allItems;
   List<TrashItem> _filteredItems = []; // Tilføj denne linje for at definere _filteredItems
 
 

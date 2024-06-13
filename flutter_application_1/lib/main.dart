@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_bar_design/HyppigesteAffaldstyper.dart';
 import 'TrashItem.dart';
 import 'TrashItemList.dart';
 import 'navigation_bar.dart';
@@ -21,23 +22,39 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
-        automaticallyImplyLeading: false,
-      ),
-      body: const Column( 
-      children: [
-        Expanded(
-        child: Center(
-          child: Text('Hello,world'),
+        title: const Text('Sorteringshjælperen',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 30,
+          ),
         ),
       ),
-      NavigationBarr(),
-      ],
-     ),
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
+            child: Container(
+              height: 200,
+              child: RichText(
+                text: const TextSpan(
+                  text: 'Velkommen!',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          HyppigsteAffaldstyper(),
+        ],
+      ),
+      bottomNavigationBar: NavigationBarr(), 
     );
   }
 }
