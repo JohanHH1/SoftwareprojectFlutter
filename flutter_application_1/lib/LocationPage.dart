@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'TrashItem.dart';
-import 'TrashItemList.dart';
-import 'navigation_bar.dart';
-import 'SearchPage.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
 
 class LocationPage extends StatefulWidget{
   const LocationPage({super.key});

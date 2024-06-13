@@ -4,7 +4,7 @@ import 'TrashItem.dart';
 class trash_information_page extends StatelessWidget {
   final TrashItem trashItem;
 
-  const trash_information_page({Key? key, required this.trashItem}) : super(key: key);
+  const trash_information_page({super.key, required this.trashItem});
 
   @override
   Widget build(BuildContext context) {

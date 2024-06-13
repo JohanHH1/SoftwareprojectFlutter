@@ -6,8 +6,8 @@ class HyppigsteAffaldstyper extends StatelessWidget {
 @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(12),
-      child: Column(
+      padding: const EdgeInsets.all(12),
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[

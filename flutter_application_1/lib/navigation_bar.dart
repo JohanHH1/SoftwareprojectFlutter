@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'SearchPage.dart';
 import 'main.dart';
-import 'SearchPage.dart';
 import 'LocationPage.dart';
 
 class NavigationBarr extends StatelessWidget {

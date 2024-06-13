@@ -5,6 +5,11 @@ import 'main.dart';
 import 'TrashItem.dart';
 import 'trash_information_page.dart';
 
+
+
+
+
+
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
 
@@ -16,8 +21,6 @@ class _SearchPageState extends State<SearchPage>{
   final TextEditingController _searchController = TextEditingController();
   final List<TrashItem> _allItems = allItems;
   List<TrashItem> _filteredItems = []; // Tilføj denne linje for at definere _filteredItems
-
-
 
   @override
   void initState() {
