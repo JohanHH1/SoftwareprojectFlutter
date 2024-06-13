@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'SearchPage.dart';
 import 'main.dart';
+import 'SearchPage.dart';
 
 class NavigationBarr extends StatelessWidget {
   const NavigationBarr({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,8 @@ class NavigationBarr extends StatelessWidget {
     );
   }
 }
-        
+
+ 
 
 
 
