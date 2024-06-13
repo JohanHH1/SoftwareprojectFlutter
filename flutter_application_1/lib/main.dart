@@ -58,9 +58,60 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+            ), 
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
+            child: Container(
+              height: 200,
+              child: ListView(scrollDirection: Axis.horizontal,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(5.0),
+                child: Container(
+                  height: 150,
+                  width: 200,
+                  color: Color.fromARGB(255, 8, 157, 243),
+                ),
+                ),
+            Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Container(
+                  height: 150,
+                  width: 200,
+                  color: Color.fromARGB(255, 8, 157, 243),
+                ),
+                ),
+            Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Container(
+                  height: 150,
+                  width: 200,
+                  color: Color.fromARGB(255, 8, 157, 243),
+                ),
+                ),
+            Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Container(
+                  height: 150,
+                  width: 200,
+                  color: Color.fromARGB(255, 8, 157, 243),
+                ),
+                ),
+            Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Container(
+                  height: 150,
+                  width: 200,
+                  color: Color.fromARGB(255, 8, 157, 243),
+                ),
+                  ),
+                ],
+              ),
             ),
           ),
           HyppigsteAffaldstyper(),
+
         ],
       ),
       bottomNavigationBar: NavigationBarr(), 
