@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/HyppigesteAffaldstyper.dart';
-import 'TrashItem.dart';
-import 'TrashItemList.dart';
 import 'navigation_bar.dart';
-import 'SearchPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart'; // Importer filen med Firebase konfigurationen
 
@@ -41,8 +38,8 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
-            child: Container(
+            padding: const EdgeInsets.fromLTRB(12, 10, 12, 4),
+            child: SizedBox(
               height: 200,
               child: RichText(
                 text: const TextSpan(
@@ -56,10 +53,10 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          HyppigsteAffaldstyper(),
+          const HyppigsteAffaldstyper(),
         ],
       ),
-      bottomNavigationBar: NavigationBarr(), 
+      bottomNavigationBar: const NavigationBarr(), 
     );
   }
 }

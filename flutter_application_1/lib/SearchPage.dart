@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'TrashItemList.dart';
 import 'navigation_bar.dart';
-import 'main.dart';
 import 'TrashItem.dart';
 import 'trash_information_page.dart';
 
