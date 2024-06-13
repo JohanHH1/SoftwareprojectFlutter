@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/HyppigesteAffaldstyper.dart';
+import 'package:flutter_settings_bar_design/trash_information_page.dart';
 import 'LocationPage.dart';
 import 'TrashItem.dart';
 import 'TrashItemList.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
+  
    @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,6 +79,8 @@ class HomePage extends StatelessWidget {
                   color: Color.fromARGB(255, 8, 157, 243),
                 ),
                 ),
+                
+          //const NavigationBarr(),
             Padding(
                 padding: EdgeInsets.all(5.0),
                 child: Container(

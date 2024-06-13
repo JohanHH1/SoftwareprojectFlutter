@@ -37,7 +37,7 @@ class _SearchPageState extends State<SearchPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search Page'),
+        title: const Text('Sorteringsguide'),
         automaticallyImplyLeading: false, // Fjern tilbagepilen
       ),
       body: Column(
@@ -73,9 +73,7 @@ class _SearchPageState extends State<SearchPage>{
   },
 ),
 
-
 ),
-
           const NavigationBarr(),
         ],
       ),
