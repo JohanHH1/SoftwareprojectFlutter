@@ -12,12 +12,12 @@ class NavigationBarr extends StatelessWidget {
     return Container(
       height: 56, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8),
-      decoration: const BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
+      decoration: const BoxDecoration(color: Color(-4072000)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
-            icon: const Icon(Icons.home, color: Color.fromARGB(255, 36, 100, 38)),
+            icon: const Icon(Icons.home, color: Colors.black),
             tooltip: 'Home',
             onPressed: () {
               Navigator.push(
@@ -27,7 +27,7 @@ class NavigationBarr extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.search, color: Color.fromARGB(255, 36, 100, 38)),
+            icon: const Icon(Icons.search, color: Colors.black),
             tooltip: 'Search',
             onPressed: () {
               Navigator.push(
@@ -37,7 +37,7 @@ class NavigationBarr extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.pin_drop, color: Color.fromARGB(255, 36, 100, 38)),
+            icon: const Icon(Icons.pin_drop, color: Colors.black),
             tooltip: 'Map',
             onPressed: () {
               Navigator.push(
