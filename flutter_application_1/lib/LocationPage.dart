@@ -5,7 +5,7 @@ import 'navigation_bar.dart';
 import 'SearchPage.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:flutter_osm_plugin/flutter_osm_plugin.dart';
+import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 
 class LocationPage extends StatefulWidget{
   const LocationPage({super.key});
@@ -37,6 +37,7 @@ class _MyLocationPageState extends State<LocationPage> {
         ),
       children: [
         openStreetMapTileLayer,
+        CurrentLocationLayer(),
       ],
     );
   }
