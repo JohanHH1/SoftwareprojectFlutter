@@ -39,11 +39,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sorteringshjælperen',
+        
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 32,
           ),
         ),
+        automaticallyImplyLeading: false,
       ),
       body: Center( 
         child: ListView(
