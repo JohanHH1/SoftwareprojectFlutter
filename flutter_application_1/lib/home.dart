@@ -58,45 +58,46 @@ class HomePage extends StatelessWidget {
               height: 200,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: [
+                children: const [
                   Padding(
                     padding: EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 150,
+                    child: Image(
+                      image: NetworkImage('https://www.fakta.eu/Services/ImageHandler.ashx?imgId=2200177&sizeId=0&RevisionNo=1_0'),
                       width: 200,
-                      color: Color.fromARGB(255, 8, 157, 243),
+                      height: 200,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 150,
+                    child: Image(
+                      image: NetworkImage('https://cdn.publisher-live.etc.nu/swp/uc3g8l/media/20221117131144_b73b67b408fa7d028dad635419b061a2b11205066fdffb804b501ef1882118a0.jpg'),
                       width: 200,
-                      color: Color.fromARGB(255, 8, 157, 243),
+                      height: 200,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 150,
+                    child: Image(
+                      image: NetworkImage('https://www.frugtmanden.com/media/catalog/product/cache/ce641b62fe2b50b8865ff72d5b491831/a/r/arla_let.webp'),
                       width: 200,
-                      color: Color.fromARGB(255, 8, 157, 243),
+                      height: 200,
+                    ),
+                  ),
+                
+                  Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: Image(
+                      image: NetworkImage('https://buyersclub.blob.core.windows.net/images/items/1674279_0_500x500.jpg'),
+                      width: 200,
+                      height: 200,
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 150,
+                    child: Image(
+                      image: NetworkImage('https://media.licdn.com/dms/image/C5612AQFlwmIh-5At3w/article-cover_image-shrink_600_2000/0/1520062735263?e=2147483647&v=beta&t=l8F606J0PYRxZaef6l1YF2xFZBaP_wv6R5__76sJDyQ'),
                       width: 200,
-                      color: Color.fromARGB(255, 8, 157, 243),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: Container(
-                      height: 150,
-                      width: 200,
-                      color: Color.fromARGB(255, 8, 157, 243),
+                      height: 200,
                     ),
                   ),
                 ],
