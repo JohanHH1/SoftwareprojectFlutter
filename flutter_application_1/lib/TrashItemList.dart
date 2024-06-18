@@ -5,7 +5,7 @@ final List<TrashItem> allItems = [
   TrashItem(
     name: 'Pizzabakke',
     sortingType: 'Restaffald',
-    imageUrl: 'https://example.com/plastic_bottle.jpg',
+    imageUrl: 'pizzabox.png',
     tips: 'Smid eventuele madreesterne i kompost.',
   ),
   TrashItem(
