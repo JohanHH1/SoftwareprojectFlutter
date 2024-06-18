@@ -18,6 +18,13 @@ class trash_information_page extends StatelessWidget {
           children: [
             Text('Name: ${trashItem.name}'),
             Text('Sorting Type: ${trashItem.sortingType}'),
+            Text('Tip: ${trashItem.tips}'),
+            Image(
+                      image: AssetImage(trashItem.imageUrl!),
+                      width: 200,
+                      height: 200,
+                    ),
+            
             // Add more details as needed
           ],
         ),

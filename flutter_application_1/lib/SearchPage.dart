@@ -6,7 +6,7 @@ import 'TrashItem.dart';
 import 'trash_information_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'ItemDetailPage.dart';
-
+/*
 class SearchPage extends StatefulWidget {
   @override
   _SearchPageState createState() => _SearchPageState();
@@ -107,7 +107,8 @@ class _SearchPageState extends State<SearchPage> {
   }
 }
 
-/* class SearchPage extends StatefulWidget {
+*/
+ class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
 
   @override
@@ -181,4 +182,4 @@ class _SearchPageState extends State<SearchPage>{
       ),
       );
   }
-} */
+} 
