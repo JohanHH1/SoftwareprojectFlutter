@@ -13,22 +13,37 @@ class trash_information_page extends StatelessWidget {
         title: Text(trashItem.name),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Name: ${trashItem.name}'),
-            Text('Sorting Type: ${trashItem.sortingType}'),
-            Text('Tip: ${trashItem.tips}'),
-            Image(
-                      image: AssetImage(trashItem.imageUrl!),
-                      width: 200,
-                      height: 200,
-                    ),
-            
-            // Add more details as needed
-          ],
+        child: Container(
+          padding: EdgeInsets.all(16.0),  // Yderligere plads rundt om dataene
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [const Color.fromARGB(255, 95, 174, 98),  Color(-4072000)], // Gradient farver
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+            borderRadius: BorderRadius.circular(12.0), // Rundede hjørner
+          ), // Grøn baggrund
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Name: ${trashItem.name}'),
+                Text('Sorting Type: ${trashItem.sortingType}'),
+                Text('Tip: ${trashItem.tips}'),
+                Image(
+                  image: AssetImage(trashItem.imageUrl!),
+                  width: 200,
+                  height: 200,
+                ),
+                Image(
+                  image: AssetImage(trashItem.sortingType + '.png'),
+                  width: 200,
+                  height: 200,
+                ),
+              ],
+            ),
+          ),
         ),
-      ),
-    );
+      );
   }
 }
