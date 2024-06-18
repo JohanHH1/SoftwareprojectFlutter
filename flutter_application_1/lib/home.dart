@@ -55,29 +55,34 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
             child: Container(
-              height: 200,
+              height: 210,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: const [
-                    Image(
-                      image: AssetImage('assets/skyr.jpeg'),
-                      width: 200,
+                    ImageWithText(
+                      imageAsset: ('assets/skyr.jpeg'),
+                      boldText: 'Skyr',
+                      greyText: 'plastik', 
                     ),     
-                    Image(
-                      image: AssetImage('assets/kaffe.jpeg'),
-                      width: 200,
+                    ImageWithText(
+                      imageAsset: ('assets/kaffe.jpeg'),
+                      boldText: 'Kaffe',
+                      greyText: 'Restaffald',
                     ),              
-                    Image(
-                      image: AssetImage('assets/mælk.jpeg'),
-                      width: 200,
+                    ImageWithText(
+                      imageAsset: ('assets/mælk.jpeg'),
+                      boldText: 'Mælkekarton',
+                      greyText: 'Plastik',
                     ),
-                    Image(
-                      image: AssetImage('assets/mutti.jpeg'),
-                      width: 200,
+                    ImageWithText(
+                      imageAsset: ('assets/mutti.jpeg'),
+                      boldText: 'Dåser',
+                      greyText: 'Metal',
                     ),
-                    Image(
-                      image: AssetImage('assets/æg.jpeg'),
-                      width: 200,
+                    ImageWithText(
+                      imageAsset: ('assets/æg.jpeg'),
+                      boldText: 'Æg',
+                      greyText: 'Madaffald',
                     ),
                 ],
               ),
@@ -205,6 +210,58 @@ class HomePage extends StatelessWidget {
       ),
       ),
       bottomNavigationBar: NavigationBarr(),
+    );
+  }
+}
+
+class ImageWithText extends StatelessWidget {
+  final String imageAsset;
+  final String boldText;
+  final String greyText;
+  //final Widget destination;
+
+  const ImageWithText({
+    super.key,
+    required this.imageAsset,
+    required this.boldText,
+    required this.greyText, 
+    //required this.destination,
+  });
+
+@override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      // onTap: () {
+      //   Navigator.pop(
+      //     context,
+      //     MaterialPageRoute(builder: (context) => destination),
+      //   );
+      // },
+      child: Column(
+        children: [
+          Image.network(
+            imageAsset,
+            width: 200,
+            height: 150,
+            fit: BoxFit.cover,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            boldText,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            greyText,
+            style: const TextStyle(
+              fontSize: 14,
+              color: Colors.grey,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
