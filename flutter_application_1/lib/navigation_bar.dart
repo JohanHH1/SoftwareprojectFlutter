@@ -33,7 +33,7 @@ class NavigationBarr extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SearchPage()),
+                MaterialPageRoute(builder: (context) => SearchPage()),
               );
             },
           ),
