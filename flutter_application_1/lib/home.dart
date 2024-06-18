@@ -1,7 +1,10 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_bar_design/SearchPage.dart';
+import 'package:flutter_settings_bar_design/TrashItem.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
 import 'package:readmore/readmore.dart';
+import 'trash_information_page.dart';
 
 
 
@@ -63,26 +66,31 @@ class HomePage extends StatelessWidget {
                       imageAsset: ('assets/skyr.jpeg'),
                       boldText: 'Skyr',
                       greyText: 'plastik', 
+                      destination: SearchPage(),
                     ),     
                     ImageWithText(
                       imageAsset: ('assets/kaffe.jpeg'),
                       boldText: 'Kaffe',
                       greyText: 'Restaffald',
+                      destination: SearchPage(),
                     ),              
                     ImageWithText(
                       imageAsset: ('assets/mælk.jpeg'),
                       boldText: 'Mælkekarton',
-                      greyText: 'Plastik',
+                      greyText: 'Plastik', 
+                      destination: SearchPage(),
                     ),
                     ImageWithText(
                       imageAsset: ('assets/mutti.jpeg'),
                       boldText: 'Dåser',
                       greyText: 'Metal',
+                      destination: SearchPage(),
                     ),
                     ImageWithText(
                       imageAsset: ('assets/æg.jpeg'),
                       boldText: 'Æg',
                       greyText: 'Madaffald',
+                      destination: SearchPage(),
                     ),
                 ],
               ),
@@ -218,25 +226,25 @@ class ImageWithText extends StatelessWidget {
   final String imageAsset;
   final String boldText;
   final String greyText;
-  //final Widget destination;
+  final Widget destination;
 
   const ImageWithText({
     super.key,
     required this.imageAsset,
     required this.boldText,
     required this.greyText, 
-    //required this.destination,
+    required this.destination,
   });
 
 @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      // onTap: () {
-      //   Navigator.pop(
-      //     context,
-      //     MaterialPageRoute(builder: (context) => destination),
-      //   );
-      // },
+  return InkWell(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SearchPage()),
+      );
+    },
       child: Column(
         children: [
           Image.network(
