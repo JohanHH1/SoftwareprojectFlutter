@@ -12,13 +12,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(-4072000),
         title: const Text(
           'Sorteringshjælperen',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 32,
-            color: Colors.black,
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
         automaticallyImplyLeading: false,
