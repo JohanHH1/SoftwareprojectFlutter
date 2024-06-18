@@ -61,36 +61,35 @@ class HomePage extends StatelessWidget {
               height: 210,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: const [
-                    ImageWithText(
-                      imageAsset: ('assets/skyr.jpeg'),
-                      boldText: 'Skyr',
-                      greyText: 'plastik', 
-                      destination: SearchPage(),
-                    ),     
-                    ImageWithText(
-                      imageAsset: ('assets/kaffe.jpeg'),
-                      boldText: 'Kaffe',
-                      greyText: 'Restaffald',
-                      destination: SearchPage(),
+                
+                children: [
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },
+                    child: Image(
+                      image: AssetImage('assets/skyr.jpeg'),
+                      width: 200,
+                    ), 
+                  ),    
+                    Image(
+                      image: AssetImage('assets/kaffe.jpeg'),
+                      width: 200,
                     ),              
-                    ImageWithText(
-                      imageAsset: ('assets/mælk.jpeg'),
-                      boldText: 'Mælkekarton',
-                      greyText: 'Plastik', 
-                      destination: SearchPage(),
+                    Image(
+                      image: AssetImage('assets/mælk.jpeg'),
+                      width: 200,
                     ),
-                    ImageWithText(
-                      imageAsset: ('assets/mutti.jpeg'),
-                      boldText: 'Dåser',
-                      greyText: 'Metal',
-                      destination: SearchPage(),
+                    Image(
+                      image: AssetImage('assets/mutti.jpeg'),
+                      width: 200,
                     ),
-                    ImageWithText(
-                      imageAsset: ('assets/æg.jpeg'),
-                      boldText: 'Æg',
-                      greyText: 'Madaffald',
-                      destination: SearchPage(),
+                    Image(
+                      image: AssetImage('assets/æg.jpeg'),
+                      width: 200,
                     ),
                 ],
               ),
@@ -222,54 +221,3 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class ImageWithText extends StatelessWidget {
-  final String imageAsset;
-  final String boldText;
-  final String greyText;
-  final Widget destination;
-
-  const ImageWithText({
-    super.key,
-    required this.imageAsset,
-    required this.boldText,
-    required this.greyText, 
-    required this.destination,
-  });
-
-@override
-  Widget build(BuildContext context) {
-  return InkWell(
-    onTap: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => SearchPage()),
-      );
-    },
-      child: Column(
-        children: [
-          Image.network(
-            imageAsset,
-            width: 200,
-            height: 150,
-            fit: BoxFit.cover,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            boldText,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            greyText,
-            style: const TextStyle(
-              fontSize: 14,
-              color: Colors.grey,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
