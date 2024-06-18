@@ -135,7 +135,6 @@ class _SearchPageState extends State<SearchPage>{
       }).toList();
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

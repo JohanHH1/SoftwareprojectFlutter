@@ -29,7 +29,18 @@ class trash_information_page extends StatelessWidget {
               children: [
                 Text('Name: ${trashItem.name}'),
                 Text('Sorting Type: ${trashItem.sortingType}'),
-                Text('Tip: ${trashItem.tips}'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Tooltip(
+                      message: trashItem.tips,
+                      child: const Icon(Icons.lightbulb, 
+                      color: Colors.amber,
+                      ),
+                    ),
+                    Text('Tip: ${trashItem.tips}'),
+                  ],
+                ),
                 Image(
                   image: AssetImage(trashItem.imageUrl),
                   width: 200,
