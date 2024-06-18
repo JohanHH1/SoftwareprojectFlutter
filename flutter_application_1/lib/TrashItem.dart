@@ -2,13 +2,13 @@
 class TrashItem {
   final String name;
   final String sortingType;
-  final String? imageUrl;
+  final String imageUrl;
   final String? tips;
 
   TrashItem({
     required this.name,
     required this.sortingType,
-    this.imageUrl,
+    required this.imageUrl,
     this.tips,
   });
   // Konverterer TrashItem til et Firestore-dokument
