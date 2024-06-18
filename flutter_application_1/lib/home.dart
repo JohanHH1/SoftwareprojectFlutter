@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: const [
                     Image(
-                      image: AssetImage('skyr.jpeg'),
+                      image: AssetImage('assets/skyr.jpeg'),
                       width: 200,
                     ),     
                     Image(
