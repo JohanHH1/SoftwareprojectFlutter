@@ -17,7 +17,7 @@ class trash_information_page extends StatelessWidget {
           padding: EdgeInsets.all(16.0),  // Yderligere plads rundt om dataene
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [const Color.fromARGB(255, 95, 174, 98),  Color(-4072000)], // Gradient farver
+              colors: [ Color.fromARGB(255, 95, 174, 98),  Color(-4072000)], // Gradient farver
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
             ),
@@ -31,7 +31,7 @@ class trash_information_page extends StatelessWidget {
                 Text('Sorting Type: ${trashItem.sortingType}'),
                 Text('Tip: ${trashItem.tips}'),
                 Image(
-                  image: AssetImage(trashItem.imageUrl!),
+                  image: AssetImage(trashItem.imageUrl),
                   width: 200,
                   height: 200,
                 ),
