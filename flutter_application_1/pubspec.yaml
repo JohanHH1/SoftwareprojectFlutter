@@ -32,9 +32,23 @@ dev_dependencies:
 flutter:
   uses-material-design: true 
   assets:
+    - assets/ble.png
+    - assets/fruit_and_vegetables.png
+    - assets/gavebånd.png
+    - assets/køkkenrulle.png
+    - assets/madaffald.png
+    - assets/notDefined.png
+    - assets/pap.png
+    - assets/pasta.png
+    - assets/pizzabox.png
+    - assets/Restaffald.png
+    - assets/støvsugerpose.png
     - assets/skyr.PNG
     - assets/mælk.png
-    - assets/æg.jpg
+    - assets/æg.png
     - assets/mutti.png
     - assets/kaffe.png
     - assets/export-3.geojson
+    - assets/ris.png
+    - assets/ost.png
+    - assets/brød.png

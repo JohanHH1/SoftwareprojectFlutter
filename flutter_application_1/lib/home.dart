@@ -213,7 +213,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [  
                 Image(
-                  image: AssetImage('assets/æg.jpg'),
+                  image: AssetImage('assets/æg.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,

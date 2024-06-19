@@ -13,7 +13,7 @@ class NavigationBarr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60, // in logical pixels
+      height: 68, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: const BoxDecoration(color: Color(-4072000)),
       child: Row(
