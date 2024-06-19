@@ -14,7 +14,7 @@ import 'package:readmore/readmore.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized(); // Sikrer at bindinger er initialiseret før runApp
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);// Initialiser Firebase med de korrekte konfigurationsindstillinger
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);// Initialiser Firebase med de korrekte konfigurationsindstillinger
 runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
