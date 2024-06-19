@@ -68,7 +68,7 @@ class NavigationBarr extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.pin_drop, color: Colors.black),
+                    icon: const Icon(Icons.inventory, color: Colors.black),
                     onPressed: () {
                       Navigator.push(
                         context, 

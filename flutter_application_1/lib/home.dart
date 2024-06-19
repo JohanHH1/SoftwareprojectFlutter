@@ -310,24 +310,7 @@ class HomePage extends StatelessWidget {
             'Der er desværre ikke plads til bil eller trailer på nærgenbrugsstationen.\n\n'
             
             'På nærgenbrugsstationen kan du ikke aflevere byggeaffald og sanitetsudstyr (fx toilet og håndvask). '
-            'Det skal du aflevere på en af de store genbrugsstationer.\n\n'
-            
-            'Se hvad du kan aflevere på nærgenbrugsstationen (a-r-c.dk)\n\n'
-            
-            'Liste over nærgenbrugsstationer i Københavns Kommune:\n\n'
-            
-            'Tingbjerg Nærgenbrugsstation, Ved Bygården 2, 2700 Brønshøj\n'
-            'Haraldsgade Nærgenbrugsstation, Vermundsgade 47A, 2100 København Ø\n'
-            'Nordhavn Nærgenbrugsstation, Helsinkigade 26, 2150 Nordhavn\n'
-            'Møllegade Nærgenbrugsstation, Møllegade 25, 2200 København N\n'
-            'Gartnergade Nærgenbrugsstation, Gartnergade 8-14, 2200 København N\n'
-            'Langgade Nærgenbrugsstation, Herman Bangs Plads 2, 2500 Valby\n'
-            'Enghave Nærgenbrugsstation, Sønder Boulevard 137, 1720 København V\n'
-            'Christiania Nærgenbrugsstation, Sydområdet 32, 1422 København K\n'
-            'Hørgården Nærgenbrugsstation, Brydes Allé 60A, 2300 København S\n'
-            'Remiseparken Nærgenbrugsstation, Urmagerstien 26, 2300 København S\n'
-            'Charlotte Ammundsens Plads Nærgenbrugsstation, Charlotte Ammundsens Plads 3, 1359 København K\n'
-            'Østerbrohuset Nærgenbrugsstation, Århusgade 101, 2100 København',
+            'Det skal du aflevere på en af de store genbrugsstationer.\n\n',
             trimLines: 1,
             colorClickableText: Colors.blue,
             trimMode: TrimMode.Line,
@@ -345,13 +328,7 @@ class HomePage extends StatelessWidget {
           ReadMoreText(
           'Der er fem genbrugsstationer i København. Her kan du aflevere og sortere dit affald i over 30 fraktioner.'
           'Se hvad du kan aflevere på genbrugsstationen (a-r-c.dk)'
-          'Alle større genbrugsstationer har også områder, hvor du kan give og tage gratis ting til genbrug. Er du i tvivl om, hvad der kan genbruges, kan du altid spørge personalet.'
-          'Liste over genbrugsstationer i København'
-          'Borgervænget Genbrugsstation, Sibeliusgade 80, 2200 København Ø'
-          'Bispeengen Genbrugsstation, Bispeengbuen 35, 2000 Frederiksberg'
-          'Kulbanevej Genbrugsstation, Retortvej 2, 2500 Valby'
-          'Vermlandsgade Genbrugsstation, Herjedalsgade 2, 2300 København S'
-          'Sydhavn Genbrugscenter, Bådehavnsgade 50, 2450 København SV',
+          'Alle større genbrugsstationer har også områder, hvor du kan give og tage gratis ting til genbrug. Er du i tvivl om, hvad der kan genbruges, kan du altid spørge personalet.',
             trimLines: 1,
             colorClickableText: Colors.blue,
             trimMode: TrimMode.Line,
