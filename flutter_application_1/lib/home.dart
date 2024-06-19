@@ -301,7 +301,7 @@ class HomePage extends StatelessWidget {
              MaterialPageRoute(builder: (context) => Affaldstyper()), 
               );
              },
-            child: Text('Vis alle'),
+             child: Text('Vis alle'),
             ),
         ],
       ),
