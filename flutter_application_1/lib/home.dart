@@ -1,9 +1,19 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_bar_design/Affaldstyper.dart';
+import 'package:flutter_settings_bar_design/Farligtaffald.dart';
+import 'package:flutter_settings_bar_design/Glas.dart';
 import 'package:flutter_settings_bar_design/Madaffald.dart';
+import 'package:flutter_settings_bar_design/Papir.dart';
+import 'package:flutter_settings_bar_design/Restaffald.dart';
 import 'package:flutter_settings_bar_design/SearchPage.dart';
 import 'package:flutter_settings_bar_design/TrashItem.dart';
+import 'package:flutter_settings_bar_design/mad_og_drikkekartoner.dart';
+import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
+import 'package:flutter_settings_bar_design/pap.dart';
+import 'package:flutter_settings_bar_design/plast.dart';
+import 'package:flutter_settings_bar_design/tekstilaffald.dart';
 import 'package:readmore/readmore.dart';
 import 'trash_information_page.dart';
 
@@ -62,7 +72,6 @@ class HomePage extends StatelessWidget {
               height: 210,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                
                 children: [
               GestureDetector(
               onTap: () {
@@ -274,13 +283,27 @@ class HomePage extends StatelessWidget {
         const Padding(
         padding: EdgeInsets.only(left: 12, right: 10),
         child: Text(
-          'Sådan sortere du dit affald:',
+          'Sådan sorterer du dit affald:',
           style: TextStyle(
             color: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
         ),
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          ElevatedButton(
+            onPressed:
+             (){
+              Navigator.push(context, 
+             MaterialPageRoute(builder: (context) => Affaldstyper()), 
+              );
+             },
+            child: Text('Vis alle'),
+            ),
+        ],
       ),
       Padding(
             padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
@@ -320,7 +343,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => Glas()),
                 );
               },  
               child: const Column(
@@ -347,7 +370,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => Papir()),
                 );
               },
               child: const Column(
@@ -374,7 +397,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => MadOgDrikkekartoner()),
                 );
               }, 
               child: const Column(
@@ -401,7 +424,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => Pap()),
                 );
               },  
               child: const Column(
@@ -424,142 +447,7 @@ class HomePage extends StatelessWidget {
               ],
               ),
               ),
-              GestureDetector(
-              onTap: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
-                );
-              },  
-              child: const Column(
-              children: [  
-                Image(
-                  image: AssetImage('assets/notDefined.png'),
-                  width: 200,
-                  height: 150,
-                  fit: BoxFit.contain,
-                ),
-                Spacer(),
-              Text(
-                  'Metal',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-               ),
-              ],
-              ),
-              ),
-              GestureDetector(
-              onTap: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
-                );
-              },  
-              child: const Column(
-              children: [  
-                Image(
-                  image: AssetImage('assets/notDefined.png'),
-                  width: 200,
-                  height: 150,
-                  fit: BoxFit.contain,
-                ),
-                Spacer(),
-              Text(
-                  'Plast',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-               ),
-              ],
-              ),
-              ),
-              GestureDetector(
-              onTap: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
-                );
-              },  
-              child: const Column(
-              children: [  
-                Image(
-                  image: AssetImage('assets/notDefined.png'),
-                  width: 200,
-                  height: 150,
-                  fit: BoxFit.contain,
-                ),
-                Spacer(),
-              Text(
-                  'Tekstilafald',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-               ),
-              ],
-              ),
-              ),
-              GestureDetector(
-              onTap: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
-                );
-              },  
-              child: const Column(
-              children: [  
-                Image(
-                  image: AssetImage('assets/notDefined.png'),
-                  width: 200,
-                  height: 150,
-                  fit: BoxFit.contain,
-                ),
-                Spacer(),
-              Text(
-                  'Farligt affald',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-               ),
-              ],
-              ),
-              ),
-              GestureDetector(
-              onTap: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
-                );
-              },  
-              child: const Column(
-              children: [  
-                Image(
-                  image: AssetImage('assets/Restaffald.png'),
-                  width: 200,
-                  height: 150,
-                  fit: BoxFit.contain,
-                ),
-                Spacer(),
-              Text(
-                  'Restaafald',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-               ),
-              ],
-              ),
-              ),
-            ],
+                ],
             ),
           ),
         ),
