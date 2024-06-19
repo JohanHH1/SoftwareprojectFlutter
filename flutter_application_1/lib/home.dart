@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
+            padding: const EdgeInsets.fromLTRB(12, 30, 12, 40),
             child: Container(
               height: 210,
               child: ListView(
@@ -253,44 +253,57 @@ class HomePage extends StatelessWidget {
             
           ),
         ),
-       const Padding(
-        padding: EdgeInsets.only(left: 12, right: 10),
-        child: Text(
-          'Sorteringstips:',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-      ),
-        Padding(
-          padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
-          child: Container(
-            height: 200,
-            child: RichText(
-              text: const TextSpan(
-                text: 'Sådan gør du med plastikproppen\npå papemballagen ↓',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
+      const Row(
+  mainAxisAlignment: MainAxisAlignment.end,
+  children: [
+    Expanded(
+      child: Padding(
+          padding: EdgeInsets.all(16.0),
+      child: Column(
+        children: [
+          ExpansionTile(
+            title: Text('Sådan gør du med plastikproppen på papemballagen'),
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text('Det er ikke nødvendigt at fjerne kapslen før sortering. Hvis du lader kapslen sidde, vil papemballagen og plastkapslen blive adskilt og materialegenanvendt korrekt. Det er bedre at lade kapslen sidde end at risikere, at den falder af og ender i naturen.'),
               ),
-            ),
-          ), 
-        ),
-        const Padding(
-        padding: EdgeInsets.only(left: 12, right: 10),
-        child: Text(
-          'Sådan sorterer du dit affald:',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
+            ],
           ),
-        ),
+          ExpansionTile(
+            title: Text('Hvorfor skal jeg sortere batterier?'),
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: 
+                Text('Batterier kan indeholde kviksølv, cadmium og bly, som forårsager stor skade, hvis de slipper ud i naturen.'
+' Løse småbatterier bruges fx i lommelygter, ure, fjernbetjeninger eller kameraer. Indbyggede batterier findes bl.a. i eltandbørster, computere, legetøj eller værktøj.'
+'Løse småbatterier skal afleveres i batteribakker eller lignende beholdere. Produkter med indbyggede batterier skal afleveres sammen med andet elektronikaffald, normalt på kommunens genbrugsstation. Bilbatterier skal afleveres på kommunens genbrugsstation eller lignende steder eller hos forhandlere af bilbatterier.'
+'Husk på, at mange af de ting, der bevæger sig, blinker eller larmer, drives af batteri - selvom det ikke er synligt.'),
+              ),
+            ],
+          ),
+          ExpansionTile(
+            title: Text('Sådan genanvender du 5 almindelige take-away emballager'),
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text('Det er dejligt med picnic, grillmiddage og frokoster i det fri, men det resulterer ofte i mange brugte take-away-emballager.'
+'\n1. Sushiemballage og pinde - Tøm sushiemballagen for madrester og genanvend den som plastemballage. Smid pindene i husholdningsaffaldet, medmindre de er i en papirpose.'
+'\n2. Pizzabakke - Tøm bakken for madrester og genanvend den som papiremballage.'
+'\n3. Hvid kartonemballage (f.eks. nudler/wok) - Tøm kartonemballagen for madrester og genanvend den som papiremballage.'
+'\n4. EPS-skål (f.eks. kebab og pommes frites) - Tøm skålen for madrester og genanvend den som plastemballage.'
+'\n5. Salatbakke - Tøm bakken for madrester. Hvis den er i plast, skal den genanvendes som plastemballage uanset farve. Læg den lille plastikbøtte med dressing i plastgenanvendelsen.'
+),
+              ),
+            ],
+          ),
+        ],
       ),
+    ),
+    ),
+  ],
+),
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
