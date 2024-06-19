@@ -6,7 +6,7 @@ import 'SearchPage.dart';
 import 'LocationPage.dart';
 
 class NavigationBarr extends StatelessWidget {
-  const NavigationBarr({Key? key});
+  const NavigationBarr({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,73 +16,57 @@ class NavigationBarr extends StatelessWidget {
       decoration: const BoxDecoration(color: Color(-4072000)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Flexible(
-            flex: 1,
-            fit: FlexFit.tight,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                );
-              },
-              child: const Column(
+            children: [
+              Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.home, color: Colors.black),
-                  SizedBox(height: 4),
+                  IconButton(
+                    icon: const Icon(Icons.home, color: Colors.black),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomePage()),
+                      );
+                    },
+                  ),
                   Text('Hjem', style: TextStyle(color: Colors.black)),
                 ],
               ),
-            ),
-          ),
-          Flexible(
-            flex: 1,
-            fit: FlexFit.tight,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchPage()),
-                );
-              },
-              child: const Column(
+              Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.search, color: Colors.black),
-                  SizedBox(height: 4),
+                  IconButton(
+                    icon: const Icon(Icons.search, color: Colors.black),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SearchPage()),
+                      );
+                    },
+                  ),
                   Text('Søg', style: TextStyle(color: Colors.black)),
                 ],
               ),
-            ),
-          ),
-          Flexible(
-            flex: 1,
-            fit: FlexFit.tight,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LocationPage()),
-                );
-              },
-              child: const Column(
+              Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.pin_drop, color: Colors.black),
-                  SizedBox(height: 4),
+                  IconButton(
+                    icon: const Icon(Icons.pin_drop, color: Colors.black),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LocationPage()),
+                      );
+                    }
+                  ),
                   Text('Kort', style: TextStyle(color: Colors.black)),
                 ],
               ),
-            ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
-}
-
+        );
+        }
+      }
 
  
 
