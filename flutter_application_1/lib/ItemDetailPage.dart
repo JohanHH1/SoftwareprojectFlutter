@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'TrashItem.dart';
 
 class ItemDetailPage extends StatelessWidget {
   final Map<String, dynamic> item;
@@ -9,8 +10,42 @@ class ItemDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(item['name']),
+        title: Text(
+          item['name'],
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
       ),
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(16.0),  // Yderligere plads rundt om dataene
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [ Color.fromARGB(255, 95, 174, 98),  Color(-4072000)], // Gradient farver
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+            borderRadius: BorderRadius.circular(12.0), // Rundede hjørner
+        ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(item['name'], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              Text('Sorting type: ${item['category']}', style: const TextStyle(fontSize: 16)),
+              Image.asset('assets/${item['image']}',
+                width: 300,
+                height: 300,
+              ),
+            ],
+        ),
+
+        )
+        )
+        );  
+        }
+}
+
+/*
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -31,6 +66,4 @@ class ItemDetailPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
+      */
