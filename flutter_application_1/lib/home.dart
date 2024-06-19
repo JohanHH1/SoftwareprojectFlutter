@@ -294,7 +294,7 @@ class HomePage extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          ElevatedButton(
+          TextButton(
             onPressed:
              (){
               Navigator.push(context, 
@@ -349,7 +349,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [
                 Image(
-                  image: AssetImage('assets/notDefined.png'),
+                  image: AssetImage('assets/glas.jpg'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
@@ -376,7 +376,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [           
                 Image(
-                  image: AssetImage('assets/notDefined.png'),
+                  image: AssetImage('assets/papir.jpg'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
@@ -403,7 +403,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [    
                 Image(
-                  image: AssetImage('assets/notDefined.png'),
+                  image: AssetImage('assets/madOgDrikke.jpg'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
@@ -430,7 +430,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [  
                 Image(
-                  image: AssetImage('assets/notDefined.png'),
+                  image: AssetImage('assets/pap.jpg'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,

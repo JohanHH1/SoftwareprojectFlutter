@@ -52,4 +52,11 @@ flutter:
     - assets/ris.png
     - assets/ost.png
     - assets/brød.png
-    - assets/farligtaffald.png
+    - assets/plast.jpg
+    - assets/pap.jpg
+    - assets/glas.jpg
+    - assets/Farligtaffald.png
+    - assets/papir.jpg
+    - assets/metal.jpg
+    - assets/tekstil.jpg
+    - assets/madOgDrikke.jpg
