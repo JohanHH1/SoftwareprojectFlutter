@@ -260,7 +260,7 @@ class HomePage extends StatelessWidget {
             height: 200,
             child: RichText(
               text: const TextSpan(
-                text: 'Find vej til din\ngenbrugsstation ↓',
+                text: 'Sådan gør du med plastikproppen\npå papemballagen ↓',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 15,
@@ -360,7 +360,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-        ),
+    ),
     ],
   ),
   ),
