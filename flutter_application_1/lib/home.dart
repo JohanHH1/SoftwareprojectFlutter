@@ -31,8 +31,8 @@ class HomePage extends StatelessWidget {
           'Sorteringshjælperen',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 32,
-            color: Color.fromARGB(255, 0, 0, 0),
+            fontSize: 30,
+            color: Color.fromARGB(255, 48, 40, 40),
           ),
         ),
         automaticallyImplyLeading: false,
@@ -49,9 +49,9 @@ class HomePage extends StatelessWidget {
             child: Text(
               'Velkommen!',
               style: TextStyle(
-                color: Colors.black,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 112, 70, 7),
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
               ),
             ),
           ),
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
             child: Text(
               'Hypppigeste affaldsstyper:',
               style: TextStyle(
-                color: Colors.black,
+                color: Color.fromARGB(255, 0, 0, 0),
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
@@ -83,14 +83,14 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [
                 Image(
-                  image: AssetImage('assets/skyr.PNG'),
+                  image: AssetImage('assets/mutti.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
                 ),
                 Spacer(),
                 Text(
-                  'Skyrbøtte',
+                  'Metaldåser (alle)',
                   //textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -98,7 +98,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               Text(
-                  'Plast',
+                  'Metal',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color.fromARGB(255, 21, 82, 23),
@@ -188,14 +188,14 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [    
                 Image(
-                  image: AssetImage('assets/mutti.png'),
+                  image: AssetImage('assets/skyr.PNG'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
                   ),
                   Spacer(),
                 Text(
-                  'Metaldåser (alle)',
+                  'Skyrbøtte',
                   //textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -203,7 +203,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Metal',
+                  'Plast',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color.fromARGB(255, 21, 82, 23),
