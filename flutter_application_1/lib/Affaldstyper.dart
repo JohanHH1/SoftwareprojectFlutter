@@ -79,7 +79,7 @@ class Affaldstyper extends StatelessWidget {
           children: [
             Image.asset(
               atyper[index].biilede,
-              height: 80, // Adjust as needed
+              height: 60, // Adjust as needed
             ),
             SizedBox(height: 8),
             Text(
@@ -106,14 +106,14 @@ class Atype {
 }
 
 List<Atype> atyper = [
-  Atype('Madaffald', 'assets//madaffald.png'),
-  Atype('Restaffald', 'assets//restaffald.png'),
-  Atype('Plastik',  'assets//notDefined.png'),
-  Atype('Mad- og drikkekartoner',  'assets//notDefined.png'),
-  Atype('Metal',  'assets//notDefined.png'),
-  Atype('Pap',  'assets//notDefined.png'),
-  Atype('Glas', 'assets//notDefined.png'),
-  Atype('Papir', 'assets//notDefined.png'),
-  Atype('Farligtaffald',  'assets//notDefined.png'),
-  Atype('Tekstilaffald',  'assets//notDefined.png'),
+  Atype('Madaffald', 'assets/madaffald.png'),
+  Atype('Restaffald', 'assets/Restaffald.png'),
+  Atype('Plastik',  'assets/plast.jpg'),
+  Atype('Mad- og drikkekartoner',  'assets/madOgDrikke.jpg'),
+  Atype('Metal',  'assets/metal.jpg'),
+  Atype('Pap',  'assets/pap.jpg'),
+  Atype('Glas', 'assets/glas.jpg'),
+  Atype('Papir', 'assets/papir.jpg'),
+  Atype('Farligtaffald',  'assets/farligtaffald.png'),
+  Atype('Tekstilaffald',  'assets/tekstil.jpg'),
 ];
