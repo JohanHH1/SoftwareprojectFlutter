@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [
                 Image(
-                  image: AssetImage('assets/skyr.jpeg'),
+                  image: AssetImage('assets/skyr.PNG'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
@@ -108,7 +108,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [
                 Image(
-                  image: AssetImage('assets/kaffe.jpeg'),
+                  image: AssetImage('assets/kaffe.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
@@ -143,7 +143,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [           
                 Image(
-                  image: AssetImage('assets/mælk.jpeg'),
+                  image: AssetImage('assets/mælk.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
@@ -178,7 +178,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [    
                 Image(
-                  image: AssetImage('assets/mutti.jpeg'),
+                  image: AssetImage('assets/mutti.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
@@ -213,7 +213,7 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [  
                 Image(
-                  image: AssetImage('assets/æg.jpeg'),
+                  image: AssetImage('assets/æg.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,

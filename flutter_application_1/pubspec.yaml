@@ -32,9 +32,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true 
   assets:
-    - assets/skyr.jpeg
-    - assets/mælk.jpeg
-    - assets/æg.jpeg
-    - assets/mutti.jpeg
-    - assets/kaffe.jpeg
+    - assets/skyr.PNG
+    - assets/mælk.png
+    - assets/æg.jpg
+    - assets/mutti.png
+    - assets/kaffe.png
     - assets/export-3.geojson
