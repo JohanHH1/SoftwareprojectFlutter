@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_bar_design/Madaffald.dart';
 import 'package:flutter_settings_bar_design/SearchPage.dart';
 import 'package:flutter_settings_bar_design/TrashItem.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
@@ -270,7 +271,299 @@ class HomePage extends StatelessWidget {
             ),
           ), 
         ),
-        Padding(
+        const Padding(
+        padding: EdgeInsets.only(left: 12, right: 10),
+        child: Text(
+          'Sådan sortere du dit affald:',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      Padding(
+            padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
+            child: Container(
+              height: 210,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Madaffald()),
+                );
+              },
+              child: const Column(
+              children: [
+                Image(
+                  image: AssetImage('assets/madaffald.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+                Text(
+                  'Madaffald',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+            ],
+          ),  
+        ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },  
+              child: const Column(
+              children: [
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+              Text(
+                  'Glas',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                ],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },
+              child: const Column(
+              children: [           
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+                Text(
+                  'Papir',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
+              ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              }, 
+              child: const Column(
+              children: [    
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                  ),
+                  Spacer(),
+                Text(
+                  'Mad- og drikkekartoner',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+                ),
+              ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },  
+              child: const Column(
+              children: [  
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+              Text(
+                  'Pap',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+               ),
+              ],
+              ),
+              ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },  
+              child: const Column(
+              children: [  
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+              Text(
+                  'Metal',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+               ),
+              ],
+              ),
+              ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },  
+              child: const Column(
+              children: [  
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+              Text(
+                  'Plast',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+               ),
+              ],
+              ),
+              ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },  
+              child: const Column(
+              children: [  
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+              Text(
+                  'Tekstilafald',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+               ),
+              ],
+              ),
+              ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },  
+              child: const Column(
+              children: [  
+                Image(
+                  image: AssetImage('assets/notDefined.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+              Text(
+                  'Farligt affald',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+               ),
+              ],
+              ),
+              ),
+              GestureDetector(
+              onTap: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchPage()),
+                );
+              },  
+              child: const Column(
+              children: [  
+                Image(
+                  image: AssetImage('assets/Restaffald.png'),
+                  width: 200,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                Spacer(),
+              Text(
+                  'Restaafald',
+                  //textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+               ),
+              ],
+              ),
+              ),
+            ],
+            ),
+          ),
+        ),
+         Padding(
           padding: EdgeInsets.fromLTRB(12, 0, 12, 4),
           child: Container(
             height: 30,
