@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       appBar: AppBar(
         backgroundColor: Color(-4072000),
         title: const Text(
@@ -70,47 +71,34 @@ class HomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => SearchPage()),
                     );
                   },
-                    child: const Image(
+                  child: const Column(
+                  children: [
+                    Image(
                       image: AssetImage('assets/skyr.jpeg'),
                       width: 200,
-                    ), 
-                  ),  
-                  GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SearchPage()),
-                    );
-                  },  
-                    child:  const Image(
-                      image: AssetImage('assets/kaffe.jpeg'),
-                      width: 200,
-                    ),  
-                  ),   
-                  GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SearchPage()),
-                    );
-                  },           
-                    child: const Image(
-                      image: AssetImage('assets/mælk.jpeg'),
-                      width: 200,
+                      height: 150,
+                      fit: BoxFit.contain,
                     ),
-                  ),
-                  GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SearchPage()),
-                    );
-                  },   
-                    child: const Image(
-                      image: AssetImage('assets/mutti.jpeg'),
-                      width: 200,
+                    Spacer(),
+                    Text(
+                      'Skyrbøtte',
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
+                  Text(
+                      'Plast',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 21, 82, 23),
+                        fontSize: 14,
+                      ),
+                    ),
+                ],
+              ),  
+            ),
                   GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -118,15 +106,144 @@ class HomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => SearchPage()),
                     );
                   },  
-                    child: const Image(
-                      image: AssetImage('assets/æg.jpeg'),
+                  child: const Column(
+                  children: [
+                    Image(
+                      image: AssetImage('assets/kaffe.jpeg'),
                       width: 200,
+                      height: 150,
+                      fit: BoxFit.contain,
+                    ),
+                    Spacer(),
+                      Text(
+                      'Kaffefilter og kaffegrums',
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  Text(
+                      'Madaffald',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 21, 82, 23),
+                        fontSize: 14,
+                      ),
+                    ),
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },
+                  child: const Column(
+                  children: [           
+                    Image(
+                      image: AssetImage('assets/mælk.jpeg'),
+                      width: 200,
+                      height: 150,
+                      fit: BoxFit.contain,
+                    ),
+                    Spacer(),
+                    Text(
+                      'Mælk',
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      'Mad- og drikkekartoner',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 21, 82, 23),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+                  ),
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  }, 
+                  child: const Column(
+                  children: [    
+                    Image(
+                      image: AssetImage('assets/mutti.jpeg'),
+                      width: 200,
+                      height: 150,
+                      fit: BoxFit.contain,
+                      ),
+                      Spacer(),
+                    Text(
+                      'Metaldåser (alle)',
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      'Metal',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 21, 82, 23),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
                     ),
                   ),
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },  
+                  child: const Column(
+                  children: [  
+                    Image(
+                      image: AssetImage('assets/æg.jpeg'),
+                      width: 200,
+                      height: 150,
+                      fit: BoxFit.contain,
+                    ),
+                    Spacer(),
+                  Text(
+                      'Æg og æggeskaller',
+                      //textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                  ),
+                  Text(
+                      'Madaffald',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 21, 82, 23),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                  ),
+                  ),
                 ],
+                ),
+                
               ),
             ),
-          ),
            const Padding(
             padding: EdgeInsets.only(left: 12, right: 10),
             child: Text(
