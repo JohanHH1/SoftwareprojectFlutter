@@ -1,7 +1,5 @@
 // ignore: file_names
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_settings_bar_design/SearchPage.dart';
 import 'package:flutter_settings_bar_design/TrashItem.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
@@ -11,210 +9,6 @@ import 'trash_information_page.dart';
 
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(-4072000),
-        title: const Text(
-          'Sorteringshjælperen',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 32,
-            color: Color.fromARGB(255, 0, 0, 0),
-          ),
-        ),
-        automaticallyImplyLeading: false,
-        elevation: 0,
-      ),
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 40),
-            Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                'Velkommen!',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(16),
-              child: Text(
-                'Hyppigste affaldsstyper:',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
-              child: Container(
-                height: 210,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SearchPage()),
-                        );
-                      },
-                      child: Image(
-                        image: AssetImage('assets/skyr.jpeg'),
-                        width: 200,
-                      ),
-                    ),
-                    Image(
-                      image: AssetImage('assets/kaffe.jpeg'),
-                      width: 200,
-                    ),
-                    Image(
-                      image: AssetImage('assets/mælk.jpeg'),
-                      width: 200,
-                    ),
-                    Image(
-                      image: AssetImage('assets/mutti.jpeg'),
-                      width: 200,
-                    ),
-                    Image(
-                      image: AssetImage('assets/æg.jpeg'),
-                      width: 200,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 12, right: 10),
-              child: Text(
-                'Sorteringstips:',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(12, 0, 12, 4),
-              child: Container(
-                height: 30,
-                child: RichText(
-                  text: TextSpan(
-                    text: 'Genbrugsstationer tæt på',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(7.0),
-              child: Align(
-    alignment: Alignment.topRight,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LocationScreen()),
-                );
-              },
-              child: Text('Show All'),
-            ),
-          ],
-        ),
-                  SizedBox(height: 10),
-                  SizedBox(
-                    height: 200,
-                    child: ListView(
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        Container(
-                          width: 200,
-                          height: 200,
-                          color: Colors.blue,
-                          margin: EdgeInsets.all(5),
-                        ),
-                        Container(
-                          width: 200,
-                          height: 200,
-                          color: Colors.green,
-                          margin: EdgeInsets.all(5),
-                        ),
-                        Container(
-                          width: 200,
-                          height: 200,
-                          color: Colors.amber,
-                          margin: EdgeInsets.all(5),
-                        ),
-                        Container(
-                          width: 200,
-                          height: 200,
-                          color: Colors.pinkAccent,
-                          margin: EdgeInsets.all(5),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(10),
-              child: Text('Placeholder',
-              style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: NavigationBarr(),
-    );
-  }
-}
-
-
-class LocationScreen extends StatelessWidget {
-  const LocationScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Lokationer'),
-        backgroundColor: Color.fromARGB(255, 55, 148, 230),
-      ),
-      ); 
-  }
-}
-
-
-/* class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
@@ -267,6 +61,7 @@ class LocationScreen extends StatelessWidget {
               height: 210,
               child: ListView(
                 scrollDirection: Axis.horizontal,
+                
                 children: [
                   GestureDetector(
                   onTap: () {
@@ -275,27 +70,59 @@ class LocationScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => SearchPage()),
                     );
                   },
-                    child: Image(
+                    child: const Image(
                       image: AssetImage('assets/skyr.jpeg'),
                       width: 200,
                     ), 
-                  ),    
-                    Image(
+                  ),  
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },  
+                    child:  const Image(
                       image: AssetImage('assets/kaffe.jpeg'),
                       width: 200,
-                    ),              
-                    Image(
+                    ),  
+                  ),   
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },           
+                    child: const Image(
                       image: AssetImage('assets/mælk.jpeg'),
                       width: 200,
                     ),
-                    Image(
+                  ),
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },   
+                    child: const Image(
                       image: AssetImage('assets/mutti.jpeg'),
                       width: 200,
+                      ),
                     ),
-                    Image(
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                    );
+                  },  
+                    child: const Image(
                       image: AssetImage('assets/æg.jpeg'),
                       width: 200,
                     ),
+                  ),
                 ],
               ),
             ),
@@ -311,6 +138,22 @@ class LocationScreen extends StatelessWidget {
               ),
             ),
           ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(12, 10, 12, 4),
+              child: Container(
+                height: 200,
+                child: RichText(
+                  text: const TextSpan(
+                    text: 'Find vej til din\ngenbrugsstation ↓',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ), 
+            ),
             Padding(
               padding: EdgeInsets.fromLTRB(12, 0, 12, 4),
               child: Container(
@@ -333,21 +176,13 @@ class LocationScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'De nærmeste genbrugsstationer',
+                'Nærgenbrugsstationer',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
                 ),
-              ),   
-              SizedBox(height: 10),
-              Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    Container(height: 200 color: Colors.blue,),
-                    Container(height: 200, color: Colors.green),
-                    Container(height: 200, color: Colors.amber),
-                      Container(height: 200, color: Colors.pinkAccent),
+              ),
+              SizedBox(height: 2),
               ReadMoreText(
                 'En nærgenbrugsstation er en mindre genbrugsstation placeret centralt i byen. '
                 'Her kan du give og tage gratis ting til genbrug (fx møbler, køkkenting, legetøj, bøger mv.), '
@@ -418,8 +253,3 @@ class LocationScreen extends StatelessWidget {
   }
 }
 
-
-
-
-
- */
