@@ -62,25 +62,29 @@ class ItemDetailPage extends StatelessWidget {
                     height: 300,
                   ),
                 ),
-                SizedBox(height: 20), // Vertical space between category image and tip section
+                SizedBox(
+                  height: 20,
+                  width: 300),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (item['tips'] != '') 
                     Tooltip(
                       message: '${item['image']} tips',
                       child: const Icon(
                         Icons.lightbulb,
                         color: Color.fromARGB(255, 231, 215, 31),
                       ),
-                    ),
-                    SizedBox(width: 8), // Horizontal space between icon and text
-                    Text(
-                      'Tip: ${item['name']} tips',
+                    ),             
+                 Expanded(
+                    child: Text(
+                      '${item['tips']}',
                       textAlign: TextAlign.center,
                     ),
-                  ],
-                ),
-              ],
+                  ),            
+                ],
+              ),
+            ],
             ),
           ),
         ),
