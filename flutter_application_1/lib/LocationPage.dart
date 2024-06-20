@@ -7,25 +7,6 @@ import 'package:latlong2/latlong.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
-void main() {
- runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
- const MyApp({super.key});
-
- @override
- Widget build(BuildContext context) {
-   return MaterialApp(
-     theme: ThemeData(
-       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-       useMaterial3: true,
-     ),
-     home: const LocationPage(title: 'Flutter Demo Home Page'),
-   );
- }
-}
-
 
 
 class LocationPage extends StatefulWidget {
@@ -44,14 +25,13 @@ class _MyHomePageState extends State<LocationPage> {
     void initState(){
       super.initState();
       _getCurrentLocation();
-       CurrentLocationLayer();
     }
   
 
 
  Future<void> _getCurrentLocation() async {
    try {
-    await _addTrashBinMarkers();
+    await _addTrashMarkers();
      setState(() {
        _errorMessage = ''; // Reset error message
      });
@@ -63,35 +43,76 @@ class _MyHomePageState extends State<LocationPage> {
  }
 
 
- Future<void> _addTrashBinMarkers() async {
+ //Future<void> _addTrashBinMarkers() async {
+  Future<void> _addTrashMarkers() async {
    try {
      final String jsonString =
-         await rootBundle.loadString('assets/export-5.geojson');
+         await rootBundle.loadString('lib/assets/export-6.geojson');
      final jsonData = json.decode(jsonString);
      final features = jsonData['features'];
 
      setState(() {
-       _markers.addAll((features as List).map((feature) {
-         final coordinates = feature['geometry']['coordinates'];
+       for (var feature in features) {
+         final geometry = feature['geometry'];
+         final coordinates = geometry['coordinates'];
+         LatLng? firstCoordinate;
 
-         return Marker(
-           width: 80.0,
-           height: 80.0,
-           point: LatLng(coordinates[1], coordinates[0]),
-           child: const Icon(
-             Icons.location_on,
-             color: Colors.red,
-             size: 30.0,
-           ),
-         );
-       }).toList());
+         if (geometry['type'] == 'Point') {
+           firstCoordinate = LatLng(coordinates[1], coordinates[0]);
+         } else if (geometry['type'] == 'LineString' || geometry['type'] == 'Polygon') {
+           firstCoordinate = LatLng(coordinates[0][0][1], coordinates[0][0][0]);
+         }
+
+         if (firstCoordinate != null) {
+           _markers.add(
+             Marker(
+               width: 80.0,
+               height: 80.0,
+               point: firstCoordinate,
+               child: const Icon(
+                 Icons.location_on,
+                 color: Colors.red,
+                 size: 40.0,
+               ),
+             ),
+           );
+         }
+       }
      });
    } catch (e) {
      setState(() {
        _errorMessage = 'Error loading markers: $e';
      });
    }
- }
+  }
+
+//    try {
+//      final String jsonString = await rootBundle.loadString('assets/export-5.geojson');
+//      final jsonData = json.decode(jsonString);
+//      final features = jsonData['features'];
+
+//      setState(() {
+//        _markers.addAll((features as List).map((feature) {
+//          final coordinates = feature['geometry']['coordinates'];
+
+//          return Marker(
+//            width: 80.0,
+//            height: 80.0,
+//            point: LatLng(coordinates[1], coordinates[0]),
+//            child: const Icon(
+//              Icons.location_on,
+//              color: Colors.red,
+//              size: 30.0,
+//            ),
+//          );
+//        }).toList());
+//      });
+//    } catch (e) {
+//      setState(() {
+//        _errorMessage = 'Error loading markers: $e';
+//      });
+//    }
+//  }
 
  @override
  Widget build(BuildContext context) {

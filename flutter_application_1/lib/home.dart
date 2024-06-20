@@ -7,8 +7,6 @@ import 'package:flutter_settings_bar_design/ItemDetailPage.dart';
 import 'package:flutter_settings_bar_design/Madaffald.dart';
 import 'package:flutter_settings_bar_design/Papir.dart';
 import 'package:flutter_settings_bar_design/Restaffald.dart';
-import 'package:flutter_settings_bar_design/SearchPage.dart';
-import 'package:flutter_settings_bar_design/TrashItem.dart';
 import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
 import 'package:flutter_settings_bar_design/pap.dart';

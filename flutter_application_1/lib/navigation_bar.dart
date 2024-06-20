@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Home.dart';
 import 'package:flutter_settings_bar_design/database.dart';
-import 'SearchPage.dart';
 import 'main.dart';
-import 'SearchPage.dart';
 import 'LocationPage.dart';
 import 'database.dart';
 
@@ -32,21 +30,6 @@ class NavigationBarr extends StatelessWidget {
                     },
                   ),
                   Text('Hjem', style: TextStyle(color: Colors.black)),
-                ],
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.search, color: Colors.black),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SearchPage()),
-                      );
-                    },
-                  ),
-                  Text('Søg', style: TextStyle(color: Colors.black)),
                 ],
               ),
               Column(

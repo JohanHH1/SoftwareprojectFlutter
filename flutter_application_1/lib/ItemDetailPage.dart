@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'TrashItem.dart';
+
 
 class ItemDetailPage extends StatelessWidget {
   final Map<String, dynamic> item;

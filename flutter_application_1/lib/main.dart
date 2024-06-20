@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Affaldstyper.dart';
 import 'package:flutter_settings_bar_design/Home.dart';
 import 'package:flutter_settings_bar_design/trash_information_page.dart';
-import 'OldLocationPage.dart';
-import 'TrashItem.dart';
-import 'TrashItemList.dart';
 import 'navigation_bar.dart';
-import 'SearchPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart'; // Importer filen med Firebase konfigurationen
 import 'package:readmore/readmore.dart';
