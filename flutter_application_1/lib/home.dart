@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Affaldstyper.dart';
 import 'package:flutter_settings_bar_design/Farligtaffald.dart';
 import 'package:flutter_settings_bar_design/Glas.dart';
+import 'package:flutter_settings_bar_design/ItemDetailPage.dart';
 import 'package:flutter_settings_bar_design/Madaffald.dart';
 import 'package:flutter_settings_bar_design/Papir.dart';
 import 'package:flutter_settings_bar_design/Restaffald.dart';
-import 'package:flutter_settings_bar_design/SearchPage.dart';
-import 'package:flutter_settings_bar_design/TrashItem.dart';
-import 'package:flutter_settings_bar_design/mad_og_drikkekartoner.dart';
 import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
 import 'package:flutter_settings_bar_design/pap.dart';
@@ -77,7 +75,13 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => const ItemDetailPage(
+                  item: {
+                    'name': 'Metaldåser',
+                    'category': 'Metal',
+                    'image': 'mutti.png'
+                  }
+                )),
                 );
               },
               child: const Column(
@@ -112,7 +116,13 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => const ItemDetailPage(
+                  item: {
+                    'name': 'Teblade og kaffegrums',
+                    'category': 'Madaffald',
+                    'image': 'kaffe.png'
+                  }
+                )),
                 );
               },  
               child: const Column(
@@ -147,7 +157,13 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => const ItemDetailPage(
+                  item: {
+                    'name': 'Mælkekarton',
+                    'category': 'Plast',
+                    'image': 'mælk.png'
+                  }
+                )),
                 );
               },
               child: const Column(
@@ -160,7 +176,7 @@ class HomePage extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  'Mælk',
+                  'Mælkekarton',
                   //textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -168,7 +184,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Mad- og drikkekartoner',
+                  'Plast',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color.fromARGB(255, 21, 82, 23),
@@ -182,7 +198,13 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => const ItemDetailPage(
+                  item: {
+                    'name': 'Skyrbøtte',
+                    'category': 'Plast',
+                    'image': 'skyr.png'
+                  }
+                )),
                 );
               }, 
               child: const Column(
@@ -217,7 +239,13 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SearchPage()),
+                MaterialPageRoute(builder: (context) => const ItemDetailPage(
+                  item: {
+                    'name': 'Æg og æggeskaller',
+                    'category': 'Madaffald',
+                    'image': 'æg.png'
+                  }
+                )),
                 );
               },  
               child: const Column(
@@ -304,6 +332,17 @@ class HomePage extends StatelessWidget {
     ),
   ],
 ),
+const Padding(
+        padding: EdgeInsets.only(left: 12, right: 10),
+        child: Text(
+          'Affaldstyper',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        ),
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -383,7 +422,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MadOgDrikkekartoner()),
+                MaterialPageRoute(builder: (context) => Metal()),
                 );
               }, 
               child: const Column(
