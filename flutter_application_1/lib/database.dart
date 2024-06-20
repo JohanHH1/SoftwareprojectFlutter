@@ -79,9 +79,8 @@ class _ItemList1State extends State<ItemList1> {
             ),
           ),
           Expanded(
-            child: filteredItems.isEmpty
-                ? CircularProgressIndicator()
-                : ListView.builder(
+            child: 
+              ListView.builder(
                     itemCount: filteredItems.length,
                     itemBuilder: (context, index) {
                       final item = filteredItems[index];
