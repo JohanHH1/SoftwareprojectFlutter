@@ -370,7 +370,7 @@ const Padding(
       Padding(
             padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
             child: Container(
-              height: 210,
+              height: 160,
               child: Scrollbar(child: 
                ListView(
                 scrollDirection: Axis.horizontal,
@@ -473,7 +473,7 @@ const Padding(
          Padding(
           padding: EdgeInsets.fromLTRB(12, 0, 12, 4),
           child: Container(
-            height: 30,
+            height: 20,
             child: RichText(
               text: const TextSpan(
                 text: 'Hvad kan jeg aflevere på genbrugsstationen?',
