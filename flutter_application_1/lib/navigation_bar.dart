@@ -11,7 +11,8 @@ class NavigationBarr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 68, // in logical pixels
+     // height: 68, // in logical pixels
+      //height: 68, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration: const BoxDecoration(color: Color.fromARGB(255, 172, 206, 171)),
       child: Row(
@@ -51,7 +52,7 @@ class NavigationBarr extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.inventory, color: Colors.black),
+                    icon: const Icon(Icons.search, color: Colors.black),
                     onPressed: () {
                       Navigator.push(
                         context, 
@@ -59,9 +60,9 @@ class NavigationBarr extends StatelessWidget {
                       );
                     },
                   ),
-                  Text('Items', style: TextStyle(color: Colors.black)),
+                  Text('Søg', style: TextStyle(color: Colors.black)),
                 ],
-                ),
+              ),
             ],
           ),
         );

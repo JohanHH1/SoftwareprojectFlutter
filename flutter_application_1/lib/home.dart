@@ -37,7 +37,8 @@ class HomePage extends StatelessWidget {
         elevation: 0,
       ),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: Scrollbar(child:
+      SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(16),
             child: Text(
-              'Hypppigeste affaldsstyper:',
+              'Hypppigeste affaldsstyper',
               style: TextStyle(
                 color: Color.fromARGB(255, 0, 0, 0),
                 fontSize: 20,
@@ -65,9 +66,13 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 30, 12, 40),
-            child: Container(
+            padding: const EdgeInsets.fromLTRB(12, 30, 12, 60),
+            child: Scrollbar(
+              thickness: 2,
+              trackVisibility: true,
+            child: SizedBox(
               height: 210,
+
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -79,7 +84,8 @@ class HomePage extends StatelessWidget {
                   item: {
                     'name': 'Metaldåser',
                     'category': 'Metal',
-                    'image': 'mutti.png'
+                    'image': 'mutti.png',
+                    'tips': 'Metal, der har indeholdt mad, skal tømmes, så godt du kan. Du behøver ikke at skylle emballagen eller pille klistermærker af.',
                   }
                 )),
                 );
@@ -120,7 +126,8 @@ class HomePage extends StatelessWidget {
                   item: {
                     'name': 'Teblade og kaffegrums',
                     'category': 'Madaffald',
-                    'image': 'kaffe.png'
+                    'image': 'kaffe.png',
+                    'tips': '',
                   }
                 )),
                 );
@@ -161,7 +168,8 @@ class HomePage extends StatelessWidget {
                   item: {
                     'name': 'Mælkekarton',
                     'category': 'Plast',
-                    'image': 'mælk.png'
+                    'image': 'mælk.png',
+                    'tips': 'Husk at trykke kartonen flad for at udnytte pladsen i beholderen bedst muligt.',
                   }
                 )),
                 );
@@ -202,7 +210,8 @@ class HomePage extends StatelessWidget {
                   item: {
                     'name': 'Skyrbøtte',
                     'category': 'Plast',
-                    'image': 'skyr.png'
+                    'image': 'skyr.PNG',
+                    'tips': 'Tøm emballagen for indhold, så godt du kan. Du behøver ikke at skylle eller vaske den.',
                   }
                 )),
                 );
@@ -243,7 +252,8 @@ class HomePage extends StatelessWidget {
                   item: {
                     'name': 'Æg og æggeskaller',
                     'category': 'Madaffald',
-                    'image': 'æg.png'
+                    'image': 'æg.png',
+                    'tips': '',
                   }
                 )),
                 );
@@ -278,7 +288,7 @@ class HomePage extends StatelessWidget {
               ),
             ],
             ),
-            
+            ),  
           ),
         ),
       const Row(
@@ -343,7 +353,7 @@ const Padding(
           ),
         ),
         ),
-      Row(
+      Row( 
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           TextButton(
@@ -361,7 +371,8 @@ const Padding(
             padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
             child: Container(
               height: 210,
-              child: ListView(
+              child: Scrollbar(child: 
+               ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
               GestureDetector(
@@ -456,6 +467,7 @@ const Padding(
               ),
                 ],
             ),
+              ),
           ),
         ),
          Padding(
@@ -529,7 +541,9 @@ const Padding(
     ],
   ),
   ),
+      ),
   bottomNavigationBar: NavigationBarr(),
+  
 );
 }
 }
