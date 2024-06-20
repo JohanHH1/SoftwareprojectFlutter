@@ -22,16 +22,16 @@ class Affaldstyper extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 152, 231, 159),
       ),
        body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(7.0),
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, // Number of columns
-              mainAxisSpacing: 10.0, // Spacing between rows
+              mainAxisSpacing: 9.0, // Spacing between rows
               crossAxisSpacing: 10.0, // Spacing between columns
               childAspectRatio: 1.0, // Aspect ratio of the items
             ),
             itemCount: atyper.length,
-            itemBuilder: (BuildContext context, int index) {
+            itemBuilder: (BuildContext crontext, int index) {
                 return GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -70,18 +70,25 @@ class Affaldstyper extends StatelessWidget {
                 );
               },
                child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              atyper[index].billede,
-              height: 100, // Adjust as needed
-            ),
-            SizedBox(height: 10),
-          ],
+                color: Colors.white,
+        child: Container(
+          child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Image.asset(
+                          atyper[index].billede,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ],
         ),
       ),
-    );
+    ),
+   );
   },
 ),
 ),
