@@ -7,25 +7,6 @@ import 'package:latlong2/latlong.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
-void main() {
- runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
- const MyApp({super.key});
-
- @override
- Widget build(BuildContext context) {
-   return MaterialApp(
-     theme: ThemeData(
-       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-       useMaterial3: true,
-     ),
-     home: const LocationPage(title: 'Flutter Demo Home Page'),
-   );
- }
-}
-
 
 
 class LocationPage extends StatefulWidget {
@@ -38,20 +19,19 @@ class LocationPage extends StatefulWidget {
 class _MyHomePageState extends State<LocationPage> {
  String _errorMessage = '';
  final MapController _mapController = MapController();
- List<Marker> _markers = [];
+ List<Marker> _markers1 = [];
+ List<Marker> _markers2 = [];
 
 @override
     void initState(){
       super.initState();
       _getCurrentLocation();
-       CurrentLocationLayer();
     }
-  
-
 
  Future<void> _getCurrentLocation() async {
    try {
-    await _addTrashBinMarkers();
+    await _addTrashMarkers('1');
+    await _addTrashMarkers('2');
      setState(() {
        _errorMessage = ''; // Reset error message
      });
@@ -61,37 +41,75 @@ class _MyHomePageState extends State<LocationPage> {
      });
    }
  }
-
-
- Future<void> _addTrashBinMarkers() async {
+  Future<void> _addTrashMarkers(String choosen) async {
+    String export = 'assets/export-'+choosen+'.geojson';
    try {
      final String jsonString =
-         await rootBundle.loadString('assets/export-5.geojson');
+         await rootBundle.loadString(export);
      final jsonData = json.decode(jsonString);
      final features = jsonData['features'];
 
      setState(() {
-       _markers.addAll((features as List).map((feature) {
-         final coordinates = feature['geometry']['coordinates'];
+       for (var feature in features) {
+         final geometry = feature['geometry'];
+         final coordinates = geometry['coordinates'];
+         LatLng? firstCoordinate;
 
-         return Marker(
-           width: 80.0,
-           height: 80.0,
-           point: LatLng(coordinates[1], coordinates[0]),
-           child: const Icon(
-             Icons.location_on,
-             color: Colors.red,
-             size: 30.0,
-           ),
-         );
-       }).toList());
-     });
+         if (geometry['type'] == 'Point') {
+           firstCoordinate = LatLng(coordinates[1], coordinates[0]);
+         } else if (geometry['type'] == 'LineString' || geometry['type'] == 'Polygon') {
+           firstCoordinate = LatLng(coordinates[0][0][1], coordinates[0][0][0]);
+         }
+
+         if (firstCoordinate != null) {
+          if(choosen == '1'){
+           _markers1.add(
+             Marker(
+               width: 80.0,
+               height: 80.0,
+               point: firstCoordinate,
+               child: const Icon(
+                 Icons.recycling,
+                 color: Colors.red,
+                 size: 30.0,
+               ),
+             ),
+           );
+           } else if(choosen == '2'){
+           _markers2.add(
+             Marker(
+               width: 80.0,
+               height: 80.0,
+               point: firstCoordinate,
+               child: const Icon(
+                 Icons.delete,
+                 color: Color.fromARGB(155, 2, 42, 6),
+                 size: 20.0,
+               ),
+             ),
+           );
+          //  } else if(choosen=='6'){
+          //  _markers6.add(
+          //    Marker(
+          //      width: 80.0,
+          //      height: 80.0,
+          //      point: firstCoordinate,
+          //      child: const Icon(
+          //        Icons.location_on,
+          //        color: Colors.blue,
+          //        size: 40.0,
+          //      ),
+          //    ),
+          //  );
+            }  
+       }
+     }});
    } catch (e) {
      setState(() {
        _errorMessage = 'Error loading markers: $e';
      });
    }
- }
+  }
 
  @override
  Widget build(BuildContext context) {
@@ -106,10 +124,6 @@ class _MyHomePageState extends State<LocationPage> {
        child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
          children: <Widget>[
-           ElevatedButton(
-             onPressed: _getCurrentLocation,
-             child: const Text("Se genbrugsstationer"),
-           ),
            const SizedBox(height: 5),
            Expanded(
              child: FlutterMap(
@@ -125,7 +139,10 @@ class _MyHomePageState extends State<LocationPage> {
                  ),
                  CurrentLocationLayer(),
                  MarkerLayer(
-                   markers: _markers,
+                   markers: _markers1,
+                 ),
+                 MarkerLayer(
+                   markers: _markers2,
                  ),
                ],
              ),

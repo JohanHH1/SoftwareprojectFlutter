@@ -22,6 +22,7 @@ dependencies:
   image_picker: ^1.1.2
   file_picker: ^8.0.5
   http: ^1.2.1
+  syncfusion_flutter_maps: ^26.1.38
 
 
 dev_dependencies:
@@ -48,8 +49,9 @@ flutter:
     - assets/æg.png
     - assets/mutti.png
     - assets/kaffe.png
-    - assets/export-3.geojson
-    - assets/export-5.geojson
+    - assets/export-1.geojson
+    - assets/export-2.geojson
+    - assets/export-6.geojson
     - assets/ris.png
     - assets/ost.png
     - assets/brød.png

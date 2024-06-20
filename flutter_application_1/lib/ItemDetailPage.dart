@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'TrashItem.dart';
+
+//Dataen om alt skraldet som f.eks. navn, kategori osv bliver vist hvor det skal.
+//Billeder ligger lokalt med appen, og tilgås med pathen samt navnet der kommer fra JSON filen.
 
 class ItemDetailPage extends StatelessWidget {
+  //Tager imod det valgte skrald med alt det tilhørende information.
   final Map<String, dynamic> item;
 
   const ItemDetailPage({super.key, required this.item});
@@ -16,51 +19,88 @@ class ItemDetailPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(16.0),
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color.fromARGB(255, 95, 174, 98), Color(-4072000)],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0), // Grønd kant
+          child: Container(
+            padding: const EdgeInsets.all(30.0),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Color.fromARGB(255, 95, 174, 98), Color(-4072000)],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
             ),
-            borderRadius: BorderRadius.circular(12.0),
-          ),
-          child: ListView(
-            shrinkWrap: true,
-            children: [
-              Image.asset(
-                'assets/${item['image']}',
-                width: 300,
-                height: 300,
-              ),
-              Text(item['name'], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              Text('Sorting type: ${item['category']}', style: const TextStyle(fontSize: 16)),
-              Image.asset(
-               'assets/${item['category'].toLowerCase().replaceAll(' ', '_')}.png',
-                width: 300,
-                height: 300,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Tooltip(
-                    message: '${item['image']} tips',
-                    child: const Icon(
-                      Icons.lightbulb,
-                      color: Color.fromARGB(255, 231, 215, 31),
-                    ),
+            child: ListView(
+              physics: const BouncingScrollPhysics(), // Bounce effekt på scroll
+              children: [
+                Center(
+                  child: Image.asset(
+                    'assets/${item['image']}',
+                    width: 300,
+                    height: 300,
                   ),
-                  Text('Tip: ${item['name']} tips'),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(height: 20), // Mellemrum mellem billede og tekst
+                Center(
+                  child: Text(
+                    item['name'],
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(
+                    height: 10), // Mellemrum mellem tekst og sorteringstype
+                Center(
+                  child: Text(
+                    'Sorting type: ${item['category']}',
+                    style: const TextStyle(fontSize: 16),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(
+                    height:
+                        20), // Mellemrum mellem sorteringstype og billede af affaldskategori
+                Center(
+                  child: Image.asset(
+                    'assets/${item['category'] + '.png'}'.toLowerCase(),
+                    width: 300,
+                    height: 300,
+                  ),
+                ),
+                const SizedBox(height: 20, width: 300),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //Tips bliver kun vist hvis der er et.
+                    if (item['tips'] != '')
+                      Tooltip(
+                        message: '${item['image']} tips',
+                        child: const Icon(
+                          Icons.lightbulb,
+                          color: Color.fromARGB(255, 231, 215, 31),
+                        ),
+                      ),
+                    Expanded(
+                      child: Text(
+                        '${item['tips']}',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+
+
 
 /*
       body: Padding(
