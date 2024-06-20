@@ -49,6 +49,7 @@ flutter:
     - assets/mutti.png
     - assets/kaffe.png
     - assets/export-3.geojson
+    - assets/export-5.geojson
     - assets/ris.png
     - assets/ost.png
     - assets/brød.png

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Affaldstyper.dart';
 import 'package:flutter_settings_bar_design/Home.dart';
 import 'package:flutter_settings_bar_design/trash_information_page.dart';
-import 'LocationPage.dart';
+import 'OldLocationPage.dart';
 import 'TrashItem.dart';
 import 'TrashItemList.dart';
 import 'navigation_bar.dart';

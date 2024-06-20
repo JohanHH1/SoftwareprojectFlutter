@@ -57,7 +57,7 @@ class NavigationBarr extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const LocationPage()),
+                        MaterialPageRoute(builder: (context) => const LocationPage(title: '',)),
                       );
                     }
                   ),
