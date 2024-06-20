@@ -9,7 +9,6 @@ import 'package:flutter_settings_bar_design/Papir.dart';
 import 'package:flutter_settings_bar_design/Restaffald.dart';
 import 'package:flutter_settings_bar_design/SearchPage.dart';
 import 'package:flutter_settings_bar_design/TrashItem.dart';
-import 'package:flutter_settings_bar_design/mad_og_drikkekartoner.dart';
 import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
 import 'package:flutter_settings_bar_design/pap.dart';
@@ -335,6 +334,17 @@ class HomePage extends StatelessWidget {
     ),
   ],
 ),
+const Padding(
+        padding: EdgeInsets.only(left: 12, right: 10),
+        child: Text(
+          'Affaldstyper',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        ),
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -414,7 +424,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MadOgDrikkekartoner()),
+                MaterialPageRoute(builder: (context) => Metal()),
                 );
               }, 
               child: const Column(
