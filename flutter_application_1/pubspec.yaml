@@ -41,7 +41,7 @@ flutter:
     - assets/pap.png
     - assets/pasta.png
     - assets/pizzabox.png
-    - assets/Restaffald.png
+    - assets/restaffald.png
     - assets/støvsugerpose.png
     - assets/skyr.PNG
     - assets/mælk.png
@@ -52,11 +52,10 @@ flutter:
     - assets/ris.png
     - assets/ost.png
     - assets/brød.png
-    - assets/plast.jpg
-    - assets/pap.jpg
-    - assets/glas.jpg
-    - assets/Farligtaffald.png
-    - assets/papir.jpg
-    - assets/metal.jpg
-    - assets/tekstil.jpg
-    - assets/madOgDrikke.jpg
+    - assets/plast.png
+    - assets/pap.png
+    - assets/glas.png
+    - assets/farligtaffald.png
+    - assets/papir.png
+    - assets/metal.png
+    - assets/tekstil.png

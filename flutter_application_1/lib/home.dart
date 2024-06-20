@@ -340,15 +340,6 @@ class HomePage extends StatelessWidget {
                   height: 150,
                   fit: BoxFit.contain,
                 ),
-                Spacer(),
-                Text(
-                  'Madaffald',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
             ],
           ),  
         ),
@@ -362,19 +353,10 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [
                 Image(
-                  image: AssetImage('assets/glas.jpg'),
+                  image: AssetImage('assets/glas.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
-                ),
-                Spacer(),
-              Text(
-                  'Glas',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
                 ),
                 ],
               ),
@@ -389,19 +371,10 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [           
                 Image(
-                  image: AssetImage('assets/papir.jpg'),
+                  image: AssetImage('assets/papir.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
-                ),
-                Spacer(),
-                Text(
-                  'Papir',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
                 ),
               ],
             ),
@@ -416,20 +389,11 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [    
                 Image(
-                  image: AssetImage('assets/madOgDrikke.jpg'),
+                  image: AssetImage('assets/metal.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
                   ),
-                  Spacer(),
-                Text(
-                  'Mad- og drikkekartoner',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
               ],
                 ),
               ),
@@ -443,20 +407,11 @@ class HomePage extends StatelessWidget {
               child: const Column(
               children: [  
                 Image(
-                  image: AssetImage('assets/pap.jpg'),
+                  image: AssetImage('assets/pap.png'),
                   width: 200,
                   height: 150,
                   fit: BoxFit.contain,
                 ),
-                Spacer(),
-              Text(
-                  'Pap',
-                  //textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-               ),
               ],
               ),
               ),

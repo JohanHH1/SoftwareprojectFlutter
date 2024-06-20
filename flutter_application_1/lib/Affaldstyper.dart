@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Farligtaffald.dart';
 import 'package:flutter_settings_bar_design/Glas.dart';
 import 'package:flutter_settings_bar_design/Papir.dart';
-import 'package:flutter_settings_bar_design/mad_og_drikkekartoner.dart';
 import 'package:flutter_settings_bar_design/madaffald.dart';
 import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
@@ -46,18 +45,16 @@ class Affaldstyper extends StatelessWidget {
                       case 2:
                         return Plast();
                       case 3:
-                        return MadOgDrikkekartoner();
-                      case 4:
                         return Metal();
-                      case 5:
+                      case 4:
                         return Pap();
-                      case 6:
+                      case 5:
                         return Glas();
-                      case 7: 
+                      case 6: 
                         return Papir();
-                      case 8:
+                      case 7:
                         return Farligtaffald();
-                      case 9:
+                      case 8:
                         return Tekstilaffald();
                       default:
                         return Scaffold(
@@ -98,16 +95,14 @@ class Atype {
 
   Atype(this.billede);
 }
-
 List<Atype> atyper = [
   Atype('assets/madaffald.png'),
-  Atype('assets/Restaffald.png'),
-  Atype('assets/plast.jpg'),
-  Atype('assets/madOgDrikke.jpg'),
-  Atype('assets/metal.jpg'),
-  Atype('assets/pap.jpg'),
-  Atype('assets/glas.jpg'),
-  Atype('assets/papir.jpg'),
+  Atype('assets/restaffald.png'),
+  Atype('assets/plast.png'),
+  Atype('assets/metal.png'),
+  Atype('assets/pap.png'),
+  Atype('assets/glas.png'),
+  Atype('assets/papir.png'),
   Atype('assets/farligtaffald.png'),
-  Atype('assets/tekstil.jpg'),
+  Atype('assets/tekstil.png'),
 ];
