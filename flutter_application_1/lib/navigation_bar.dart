@@ -51,7 +51,7 @@ class NavigationBarr extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.inventory, color: Colors.black),
+                    icon: const Icon(Icons.search, color: Colors.black),
                     onPressed: () {
                       Navigator.push(
                         context, 
@@ -59,9 +59,9 @@ class NavigationBarr extends StatelessWidget {
                       );
                     },
                   ),
-                  Text('Items', style: TextStyle(color: Colors.black)),
+                  Text('Søg', style: TextStyle(color: Colors.black)),
                 ],
-                ),
+              ),
             ],
           ),
         );
