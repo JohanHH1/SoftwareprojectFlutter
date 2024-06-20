@@ -16,51 +16,81 @@ class ItemDetailPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(16.0),
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [Color.fromARGB(255, 95, 174, 98), Color(-4072000)],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0), // Padding around the green container
+          child: Container(
+            padding: const EdgeInsets.all(30.0),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Color.fromARGB(255, 95, 174, 98), Color(-4072000)],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+              ),
+              borderRadius: BorderRadius.circular(30.0),
             ),
-            borderRadius: BorderRadius.circular(12.0),
-          ),
-          child: ListView(
-            shrinkWrap: true,
-            children: [
-              Image.asset(
-                'assets/${item['image']}',
-                width: 300,
-                height: 300,
-              ),
-              Text(item['name'], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              Text('Sorting type: ${item['category']}', style: const TextStyle(fontSize: 16)),
-              Image.asset(
-                'assets/${item['category'] + '.png'}'.toLowerCase(),
-                width: 300,
-                height: 300,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Tooltip(
-                    message: '${item['image']} tips',
-                    child: const Icon(
-                      Icons.lightbulb,
-                      color: Color.fromARGB(255, 231, 215, 31),
-                    ),
+            child: ListView(
+              physics: BouncingScrollPhysics(), // Optional: Adds bounce effect on scroll
+              children: [
+                Center(
+                  child: Image.asset(
+                    'assets/${item['image']}',
+                    width: 300,
+                    height: 300,
                   ),
-                  Text('Tip: ${item['name']} tips'),
-                ],
-              ),
-            ],
+                ),
+                SizedBox(height: 20), // Vertical space between image and text
+                Center(
+                  child: Text(
+                    item['name'],
+                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 10), // Vertical space between text and sorting type
+                Center(
+                  child: Text(
+                    'Sorting type: ${item['category']}',
+                    style: const TextStyle(fontSize: 16),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 20), // Vertical space between sorting type and category image
+                Center(
+                  child: Image.asset(
+                    'assets/${item['category'] + '.png'}'.toLowerCase(),
+                    width: 300,
+                    height: 300,
+                  ),
+                ),
+                SizedBox(height: 20), // Vertical space between category image and tip section
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Tooltip(
+                      message: '${item['image']} tips',
+                      child: const Icon(
+                        Icons.lightbulb,
+                        color: Color.fromARGB(255, 231, 215, 31),
+                      ),
+                    ),
+                    SizedBox(width: 8), // Horizontal space between icon and text
+                    Text(
+                      'Tip: ${item['name']} tips',
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+
+
 
 /*
       body: Padding(
