@@ -12,12 +12,15 @@ class ItemList1 extends StatefulWidget {
 class _ItemList1State extends State<ItemList1> {
   List<Map<String, dynamic>> items = [];
   List<Map<String, dynamic>> filteredItems = [];
+
+  //Håndterer inputs i søgefeltet
   TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     fetchItems();
+    //En listener der kalder "filterItems" hver kan input ændrer sig i søgefeltet
     searchController.addListener(() {
       filterItems();
     });
@@ -25,26 +28,37 @@ class _ItemList1State extends State<ItemList1> {
 
   Future<void> fetchItems() async {
     try {
+      //Henter roden til vores firebase
       final storageRef = FirebaseStorage.instance.ref();
+      //Henter den specifikke fil
       final trashRef = storageRef.child("trashItems/trash_items.json");
 
+      //Henter vores data fra filen
       final data = await trashRef.getData();
+
+      //Checker at vi har noget data
       if (data != null) {
-      
+        //Bruger jsonDecode fra convert packagen til at tage alt data og side i en list af dynamiske objekter,
+        //hvilket er meget nemt at arbejde med.
         final jsonData = jsonDecode(utf8.decode(data)) as List<dynamic>;
 
-        // Extract item details (assuming the JSON is a list of objects)
-        final List<Map<String, dynamic>> itemDetails = jsonData.map((item) => item as Map<String, dynamic>).toList();
+        //JSON dataen starter som en liste med dynamiske objekter.
+        //Herefter tages listen og laves til en ny liste, hvor hvert
+        //element er et map med alt dataen om skraldet.
+        final List<Map<String, dynamic>> itemDetails =
+            jsonData.map((item) => item as Map<String, dynamic>).toList();
 
-        // Update the state to display the items
+        // Opdaterer tilstanden
         setState(() {
           items = itemDetails;
           filteredItems = itemDetails;
         });
       } else {
+        //Hvis der ikke er noget data
         throw Exception('Failed to load JSON data');
       }
     } catch (e) {
+      //Printer fejl
       print('Error retrieving or parsing data: $e');
     }
   }
@@ -79,25 +93,24 @@ class _ItemList1State extends State<ItemList1> {
             ),
           ),
           Expanded(
-            child: 
-              ListView.builder(
-                    itemCount: filteredItems.length,
-                    itemBuilder: (context, index) {
-                      final item = filteredItems[index];
-                      return ListTile(
-                        title: Text(item['name']),
-                        subtitle: Text(item['category']),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ItemDetailPage(item: item),
-                            ),
-                          );
-                        },
-                      );
-                    },
-                  ),
+            child: ListView.builder(
+              itemCount: filteredItems.length,
+              itemBuilder: (context, index) {
+                final item = filteredItems[index];
+                return ListTile(
+                  title: Text(item['name']),
+                  subtitle: Text(item['category']),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ItemDetailPage(item: item),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
           ),
         ],
       ),
