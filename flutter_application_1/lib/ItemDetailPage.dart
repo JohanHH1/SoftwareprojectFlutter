@@ -17,32 +17,49 @@ class ItemDetailPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          padding: const EdgeInsets.all(16.0),  // Yderligere plads rundt om dataene
+          padding: const EdgeInsets.all(16.0),
           decoration: BoxDecoration(
             gradient: const LinearGradient(
-              colors: [ Color.fromARGB(255, 95, 174, 98),  Color(-4072000)], // Gradient farver
+              colors: [Color.fromARGB(255, 95, 174, 98), Color(-4072000)],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
             ),
-            borderRadius: BorderRadius.circular(12.0), // Rundede hjørner
-        ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: ListView(
+            shrinkWrap: true,
             children: [
-              Text(item['name'], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              Text('Sorting type: ${item['category']}', style: const TextStyle(fontSize: 16)),
-              Image.asset('assets/${item['image']}',
+              Image.asset(
+                'assets/${item['image']}',
                 width: 300,
                 height: 300,
               ),
+              Text(item['name'], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              Text('Sorting type: ${item['category']}', style: const TextStyle(fontSize: 16)),
+              Image.asset(
+                'assets/${item['category'] + '.png'}'.toLowerCase(),
+                width: 300,
+                height: 300,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Tooltip(
+                    message: '${item['image']} tips',
+                    child: const Icon(
+                      Icons.lightbulb,
+                      color: Color.fromARGB(255, 231, 215, 31),
+                    ),
+                  ),
+                  Text('Tip: ${item['name']} tips'),
+                ],
+              ),
             ],
+          ),
         ),
-
-        )
-        )
-        );  
-        }
+      ),
+    );
+  }
 }
 
 /*
