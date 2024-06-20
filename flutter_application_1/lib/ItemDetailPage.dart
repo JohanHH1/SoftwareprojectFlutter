@@ -37,7 +37,7 @@ class ItemDetailPage extends StatelessWidget {
               Text(item['name'], style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               Text('Sorting type: ${item['category']}', style: const TextStyle(fontSize: 16)),
               Image.asset(
-                'assets/${item['category'] + '.png'}'.toLowerCase(),
+               'assets/${item['category'].toLowerCase().replaceAll(' ', '_')}.png',
                 width: 300,
                 height: 300,
               ),

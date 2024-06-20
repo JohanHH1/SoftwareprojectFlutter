@@ -55,7 +55,40 @@ flutter:
     - assets/brød.png
     - assets/plast.png
     - assets/glas.png
-    - assets/farligtaffald.png
+    - assets/farligt_affald.png
     - assets/papir.png
     - assets/metal.png
     - assets/tekstil.png
+    - assets/afdækningsplast.png
+    - assets/affaldssække.png
+    - assets/aviser.png
+    - assets/Batterier.png
+    - assets/bobleplast.png
+    - assets/bon.png
+    - assets/breve.png
+    - assets/deoroll.png
+    - assets/deospray.png
+    - assets/dug.png
+    - assets/gardiner.png
+    - assets/håndklæder.png
+    - assets/hundefoder.png
+    - assets/husholdningsfilm.png
+    - assets/is.png
+    - assets/kødbakker.png
+    - assets/låg.png 
+    - assets/LED.png
+    - assets/låg.png
+    - assets/mapper.png
+    - assets/mel.png
+    - assets/ødelagttøj.png
+    - assets/perler.png
+    - assets/plastiktallerkener.png
+    - assets/poly.png
+    - assets/shampoo.png
+    - assets/slikposer.png
+    - assets/smør.png
+    - assets/tebreve.png
+    - assets/tefiltre.png
+    - assets/tøj.png
+    - assets/urtepotter.png
+    - assets/seng.png
