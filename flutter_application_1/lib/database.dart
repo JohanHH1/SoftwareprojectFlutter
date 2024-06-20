@@ -1,7 +1,6 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
-
 import 'ItemDetailPage.dart';
 
 class ItemList1 extends StatefulWidget {
@@ -63,6 +62,8 @@ class _ItemList1State extends State<ItemList1> {
     }
   }
 
+  //Sorterer skrald baseret på input i søgefeltet
+  //Sørger for kun at vise de ting man er ved at søge på
   void filterItems() {
     final query = searchController.text.toLowerCase();
     setState(() {
@@ -77,7 +78,7 @@ class _ItemList1State extends State<ItemList1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search Items'),
+        title: const Text('Search Items'),
       ),
       body: Column(
         children: [
@@ -85,13 +86,14 @@ class _ItemList1State extends State<ItemList1> {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: searchController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Search',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.search),
               ),
             ),
           ),
+          //Viser listen af sorterede ting.
           Expanded(
             child: ListView.builder(
               itemCount: filteredItems.length,
@@ -101,6 +103,7 @@ class _ItemList1State extends State<ItemList1> {
                   title: Text(item['name']),
                   subtitle: Text(item['category']),
                   onTap: () {
+                    //Når der vælges noget skrald sendes brugeren over til siden med alt information om skraldet.
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -117,6 +120,8 @@ class _ItemList1State extends State<ItemList1> {
     );
   }
 
+  //dispose der rydder op og stopper det hele når brugeren er sendt hen til skraldet.
+  //Stopper listeners så app kører bedre.
   @override
   void dispose() {
     searchController.dispose();
