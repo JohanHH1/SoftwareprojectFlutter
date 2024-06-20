@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+//Dataen om alt skraldet som f.eks. navn, kategori osv bliver vist hvor det skal.
+//Billeder ligger lokalt med appen, og tilgås med pathen samt navnet der kommer fra JSON filen.
 
 class ItemDetailPage extends StatelessWidget {
+  //Tager imod det valgte skrald med alt det tilhørende information.
   final Map<String, dynamic> item;
 
   const ItemDetailPage({super.key, required this.item});
@@ -17,7 +20,7 @@ class ItemDetailPage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20.0), // Padding around the green container
+          padding: const EdgeInsets.all(20.0), // Grønd kant
           child: Container(
             padding: const EdgeInsets.all(30.0),
             decoration: BoxDecoration(
@@ -29,7 +32,7 @@ class ItemDetailPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(30.0),
             ),
             child: ListView(
-              physics: BouncingScrollPhysics(), // Optional: Adds bounce effect on scroll
+              physics: const BouncingScrollPhysics(), // Bounce effekt på scroll
               children: [
                 Center(
                   child: Image.asset(
@@ -38,15 +41,17 @@ class ItemDetailPage extends StatelessWidget {
                     height: 300,
                   ),
                 ),
-                SizedBox(height: 20), // Vertical space between image and text
+                const SizedBox(height: 20), // Mellemrum mellem billede og tekst
                 Center(
                   child: Text(
                     item['name'],
-                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 10), // Vertical space between text and sorting type
+                const SizedBox(
+                    height: 10), // Mellemrum mellem tekst og sorteringstype
                 Center(
                   child: Text(
                     'Sorting type: ${item['category']}',
@@ -54,7 +59,9 @@ class ItemDetailPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 20), // Vertical space between sorting type and category image
+                const SizedBox(
+                    height:
+                        20), // Mellemrum mellem sorteringstype og billede af affaldskategori
                 Center(
                   child: Image.asset(
                     'assets/${item['category'] + '.png'}'.toLowerCase(),
@@ -62,29 +69,28 @@ class ItemDetailPage extends StatelessWidget {
                     height: 300,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                  width: 300),
+                const SizedBox(height: 20, width: 300),
                 Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (item['tips'] != '') 
-                    Tooltip(
-                      message: '${item['image']} tips',
-                      child: const Icon(
-                        Icons.lightbulb,
-                        color: Color.fromARGB(255, 231, 215, 31),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //Tips bliver kun vist hvis der er et.
+                    if (item['tips'] != '')
+                      Tooltip(
+                        message: '${item['image']} tips',
+                        child: const Icon(
+                          Icons.lightbulb,
+                          color: Color.fromARGB(255, 231, 215, 31),
+                        ),
                       ),
-                    ),             
-                 Expanded(
-                    child: Text(
-                      '${item['tips']}',
-                      textAlign: TextAlign.center,
+                    Expanded(
+                      child: Text(
+                        '${item['tips']}',
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                  ),            
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
             ),
           ),
         ),
