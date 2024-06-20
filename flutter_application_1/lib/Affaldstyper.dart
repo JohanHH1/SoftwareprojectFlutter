@@ -73,19 +73,14 @@ class Affaldstyper extends StatelessWidget {
                 );
               },
                child: Container(
-        color: Colors.blue,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              atyper[index].biilede,
-              height: 60, // Adjust as needed
+              atyper[index].billede,
+              height: 100, // Adjust as needed
             ),
-            SizedBox(height: 8),
-            Text(
-              atyper[index].navn,
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
+            SizedBox(height: 10),
           ],
         ),
       ),
@@ -99,21 +94,20 @@ class Affaldstyper extends StatelessWidget {
 }
 
 class Atype {
-  final String navn;
-  final String biilede;
+  final String billede;
 
-  Atype(this.navn, this.biilede);
+  Atype(this.billede);
 }
 
 List<Atype> atyper = [
-  Atype('Madaffald', 'assets/madaffald.png'),
-  Atype('Restaffald', 'assets/Restaffald.png'),
-  Atype('Plastik',  'assets/plast.jpg'),
-  Atype('Mad- og drikkekartoner',  'assets/madOgDrikke.jpg'),
-  Atype('Metal',  'assets/metal.jpg'),
-  Atype('Pap',  'assets/pap.jpg'),
-  Atype('Glas', 'assets/glas.jpg'),
-  Atype('Papir', 'assets/papir.jpg'),
-  Atype('Farligtaffald',  'assets/farligtaffald.png'),
-  Atype('Tekstilaffald',  'assets/tekstil.jpg'),
+  Atype('assets/madaffald.png'),
+  Atype('assets/Restaffald.png'),
+  Atype('assets/plast.jpg'),
+  Atype('assets/madOgDrikke.jpg'),
+  Atype('assets/metal.jpg'),
+  Atype('assets/pap.jpg'),
+  Atype('assets/glas.jpg'),
+  Atype('assets/papir.jpg'),
+  Atype('assets/farligtaffald.png'),
+  Atype('assets/tekstil.jpg'),
 ];
