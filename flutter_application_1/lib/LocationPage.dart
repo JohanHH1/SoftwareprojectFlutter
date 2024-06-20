@@ -47,7 +47,7 @@ class _MyHomePageState extends State<LocationPage> {
   Future<void> _addTrashMarkers() async {
    try {
      final String jsonString =
-         await rootBundle.loadString('lib/assets/export-6.geojson');
+         await rootBundle.loadString('assets/export-6.geojson');
      final jsonData = json.decode(jsonString);
      final features = jsonData['features'];
 
