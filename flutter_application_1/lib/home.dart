@@ -37,7 +37,8 @@ class HomePage extends StatelessWidget {
         elevation: 0,
       ),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: Scrollbar(child:
+      SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -56,7 +57,7 @@ class HomePage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(16),
             child: Text(
-              'Hypppigeste affaldsstyper:',
+              'Hypppigeste affaldsstyper',
               style: TextStyle(
                 color: Color.fromARGB(255, 0, 0, 0),
                 fontSize: 20,
@@ -65,9 +66,13 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 30, 12, 40),
-            child: Container(
+            padding: const EdgeInsets.fromLTRB(12, 30, 12, 60),
+            child: Scrollbar(
+              thickness: 2,
+              trackVisibility: true,
+            child: SizedBox(
               height: 210,
+
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -282,6 +287,7 @@ class HomePage extends StatelessWidget {
               ),
               ),
             ],
+            ),
             ),  
           ),
         ),
@@ -347,7 +353,7 @@ const Padding(
           ),
         ),
         ),
-      Row(
+      Row( 
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           TextButton(
@@ -365,7 +371,8 @@ const Padding(
             padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
             child: Container(
               height: 210,
-              child: ListView(
+              child: Scrollbar(child: 
+               ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
               GestureDetector(
@@ -460,6 +467,7 @@ const Padding(
               ),
                 ],
             ),
+              ),
           ),
         ),
          Padding(
@@ -533,7 +541,9 @@ const Padding(
     ],
   ),
   ),
+      ),
   bottomNavigationBar: NavigationBarr(),
+  
 );
 }
 }
