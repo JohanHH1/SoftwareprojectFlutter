@@ -4,7 +4,7 @@ import 'TrashItem.dart';
 class ItemDetailPage extends StatelessWidget {
   final Map<String, dynamic> item;
 
-  ItemDetailPage({required this.item});
+  const ItemDetailPage({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
