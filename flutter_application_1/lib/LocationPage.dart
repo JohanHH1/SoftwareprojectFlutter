@@ -20,6 +20,9 @@ class _MyHomePageState extends State<LocationPage> {
  String _errorMessage = '';
  final MapController _mapController = MapController();
  List<Marker> _markers = [];
+ List<Marker> _markers5 = [];
+ List<Marker> _markers6 = [];
+ List<Marker> _markers3 = [];
 
 @override
     void initState(){
@@ -31,7 +34,9 @@ class _MyHomePageState extends State<LocationPage> {
 
  Future<void> _getCurrentLocation() async {
    try {
-    await _addTrashMarkers();
+    await _addTrashMarkers('3');
+    await _addTrashMarkers('5');
+    await _addTrashMarkers('6');
      setState(() {
        _errorMessage = ''; // Reset error message
      });
@@ -44,10 +49,11 @@ class _MyHomePageState extends State<LocationPage> {
 
 
  //Future<void> _addTrashBinMarkers() async {
-  Future<void> _addTrashMarkers() async {
+  Future<void> _addTrashMarkers(String choosen) async {
+    String export = 'assets/export-'+choosen+'.geojson';
    try {
      final String jsonString =
-         await rootBundle.loadString('lib/assets/export-6.geojson');
+         await rootBundle.loadString(export);
      final jsonData = json.decode(jsonString);
      final features = jsonData['features'];
 
@@ -64,7 +70,8 @@ class _MyHomePageState extends State<LocationPage> {
          }
 
          if (firstCoordinate != null) {
-           _markers.add(
+          if(choosen == '3'){
+           _markers3.add(
              Marker(
                width: 80.0,
                height: 80.0,
@@ -76,6 +83,33 @@ class _MyHomePageState extends State<LocationPage> {
                ),
              ),
            );
+           } else if(choosen == '5'){
+           _markers5.add(
+             Marker(
+               width: 80.0,
+               height: 80.0,
+               point: firstCoordinate,
+               child: const Icon(
+                 Icons.location_on,
+                 color: Colors.green,
+                 size: 40.0,
+               ),
+             ),
+           );
+           } else if(choosen=='6'){
+           _markers6.add(
+             Marker(
+               width: 80.0,
+               height: 80.0,
+               point: firstCoordinate,
+               child: const Icon(
+                 Icons.location_on,
+                 color: Colors.blue,
+                 size: 40.0,
+               ),
+             ),
+           );
+           }
          }
        }
      });
@@ -146,7 +180,13 @@ class _MyHomePageState extends State<LocationPage> {
                  ),
                  CurrentLocationLayer(),
                  MarkerLayer(
-                   markers: _markers,
+                   markers: _markers3,
+                 ),
+                 MarkerLayer(
+                   markers: _markers5,
+                 ),
+                 MarkerLayer(
+                   markers: _markers6,
                  ),
                ],
              ),
