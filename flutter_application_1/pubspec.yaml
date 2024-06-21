@@ -100,7 +100,7 @@ flutter:
     - assets/metallåg.png
     - assets/afløb.png
     - assets/neglefil.png
-    - assets/benzin.png
+    - assets/brugtbenzindunk.png
     - assets/eddikesyre.png
     - assets/fugemasse.png
     - assets/eltandbørste.png
@@ -115,7 +115,6 @@ flutter:
     - assets/toiletboerster.png
     - assets/mundbind.png
     - assets/knæklys.png
-    - assets/kort.png
     - assets/linser.png
     - assets/skum.png
     - assets/pander.png
@@ -139,7 +138,6 @@ flutter:
     - assets/katelog.png
     - assets/papbakke.png
     - assets/smør.png
-    - assets/æggebakke.png
     - assets/nøgler.png
     - assets/pærer.png
     - assets/afløb.png
@@ -153,3 +151,33 @@ flutter:
     - assets/knæklys.png
     - assets/sandpapir.png
     - assets/bestik.png
+    - assets/astma.png
+    - assets/sovs.png
+    - assets/spraydåser.png
+    - assets/malingsrester.png
+    - assets/led.png
+    - assets/urtepotter.png
+    - assets/affaldssække.png
+    - assets/deoroll.png
+    - assets/deospray.png
+    - assets/is.png
+    - assets/shampoo.png
+    - assets/håndklæder.png
+    - assets/breve.png
+    - assets/bon.png
+    - assets/postit.png
+    - assets/æggebakker.png
+    - assets/vin.png
+    - assets/sølvpapir.png
+    - assets/kniv.png
+    - assets/alubakke.png
+    - assets/søm.png
+    - assets/bekæmpelse.png
+    - assets/klorin.png
+    - assets/tyggegummi.png
+    - assets/kuglepind.png
+    - assets/betalingskort.png
+    - assets/vatpinde.png
+    - assets/vådservietter.png
+    - assets/tennisbolde.png
+    - assets/snavsetpapir.png
