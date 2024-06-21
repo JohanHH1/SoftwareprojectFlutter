@@ -54,11 +54,11 @@ class _ItemList1State extends State<ItemList1> {
         });
       } else {
         //Hvis der ikke er noget data
-        throw Exception('Failed to load JSON data');
+        throw Exception('Kunne ikke finde data');
       }
     } catch (e) {
       //Printer fejl
-      print('Error retrieving or parsing data: $e');
+      print('Der skete en fejl: $e');
     }
   }
 
