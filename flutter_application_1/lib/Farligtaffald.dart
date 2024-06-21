@@ -1,10 +1,7 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 
 class Farligtaffald extends StatelessWidget {
@@ -18,7 +15,6 @@ void _launchURL() async {
     throw 'Could not launch $url';
   }
 }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
