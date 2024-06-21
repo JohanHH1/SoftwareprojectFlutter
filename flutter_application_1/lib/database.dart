@@ -127,12 +127,4 @@ class _ItemList1State extends State<ItemList1> {
       ),
     );
   }
-
-  //dispose der rydder op og stopper det hele når brugeren er sendt hen til skraldet.
-  //Stopper listeners så app kører bedre.
-  @override
-  void dispose() {
-    searchController.dispose();
-    super.dispose();
-  }
 }
