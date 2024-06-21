@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
+import 'package:flutter_map_marker_popup/flutter_map_marker_popup.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -41,6 +42,27 @@ class _MyHomePageState extends State<LocationPage> {
      });
    }
  }
+
+ void _onMarkerTapped(LatLng position,String name, String openHours) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(name),
+        content: Text('Åbningstider: '+openHours),
+        actions: [
+          TextButton(
+            child: Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
   Future<void> _addTrashMarkers(String choosen) async {
     String export = 'assets/export-'+choosen+'.geojson';
    try {
@@ -53,14 +75,27 @@ class _MyHomePageState extends State<LocationPage> {
        for (var feature in features) {
          final geometry = feature['geometry'];
          final coordinates = geometry['coordinates'];
+         final properties = feature['properties'];
+         final name = geometry['name'];
+         final openingHours = geometry['opening_hours'];
          LatLng? firstCoordinate;
+         String? siteName;
+         String? openHours;
+        siteName = properties['name'] ?? 'Genbrugsplads';
+        openHours = properties['opening_hours'] ?? 'Ukendt';
+          
 
          if (geometry['type'] == 'Point') {
            firstCoordinate = LatLng(coordinates[1], coordinates[0]);
          } else if (geometry['type'] == 'LineString' || geometry['type'] == 'Polygon') {
            firstCoordinate = LatLng(coordinates[0][0][1], coordinates[0][0][0]);
          }
-
+        //  if (properties['name'] == 'name') {
+        //    siteName = name[0];
+        //  }
+        //  if (properties['opening_hours'] == 'opening_hours') {
+        //    openHours = openingHours[0];
+        //  }
          if (firstCoordinate != null) {
           if(choosen == '1'){
            _markers1.add(
@@ -68,13 +103,15 @@ class _MyHomePageState extends State<LocationPage> {
                width: 80.0,
                height: 80.0,
                point: firstCoordinate,
+               child: GestureDetector(
+                onTap: () => _onMarkerTapped(firstCoordinate!, siteName!, openHours!),
                child: const Icon(
                  Icons.recycling,
                  color: Colors.red,
-                 size: 30.0,
-               ),
-             ),
-           );
+                 size: 35.0,
+               ),  
+             ),)
+             );
            } else if(choosen == '2'){
            _markers2.add(
              Marker(
@@ -83,8 +120,8 @@ class _MyHomePageState extends State<LocationPage> {
                point: firstCoordinate,
                child: const Icon(
                  Icons.delete,
-                 color: Color.fromARGB(155, 2, 42, 6),
-                 size: 20.0,
+                 color: Color.fromARGB(255, 5, 98, 14),
+                 size: 15.0,
                ),
              ),
            );
@@ -96,7 +133,7 @@ class _MyHomePageState extends State<LocationPage> {
        _errorMessage = 'Error loading markers: $e';
      });
    }
-   
+
   }
 
  @override
