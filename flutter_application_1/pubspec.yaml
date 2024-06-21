@@ -60,11 +60,11 @@ flutter:
     - assets/farligt_affald.png
     - assets/papir.png
     - assets/metal.png
-    - assets/tekstil.png
+    - assets/tekstilaffald.png
     - assets/afdækningsplast.png
     - assets/affaldssække.png
     - assets/aviser.png
-    - assets/Batterier.png
+    - assets/batterier.png 
     - assets/bobleplast.png
     - assets/bon.png
     - assets/breve.png

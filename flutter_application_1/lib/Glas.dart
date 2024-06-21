@@ -8,7 +8,7 @@ class Glas extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Glas.'),
+        title: const Text('Glas'),
         backgroundColor: Color.fromARGB(255, 55, 148, 230),
       ),
       ); 
