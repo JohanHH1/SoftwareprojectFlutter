@@ -50,27 +50,7 @@ class ItemDetailPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(
-                    height: 10), // Mellemrum mellem tekst og sorteringstype
-                Center(
-                  child: Text(
-                    'Affaldstype: ${item['category']}',
-                    style: const TextStyle(fontSize: 16),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                const SizedBox(
-                    height:
-                        20), // Mellemrum mellem sorteringstype og billede af affaldskategori
-                Center(
-                  child: Image.asset(
-                    'assets/${item['category'].toLowerCase().replaceAll(' ', '_') + '.png'}'
-                        .toLowerCase(),
-                    width: 300,
-                    height: 300,
-                  ),
-                ),
-                const SizedBox(height: 20, width: 300),
+                const SizedBox(height: 10), // Mellemrum mellem tekst og tips
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -90,6 +70,28 @@ class ItemDetailPage extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                    height:
+                        20), // Mellemrum mellem tip og billede af affaldskategori
+                Center(
+                  child: Image.asset(
+                    'assets/${item['category'].toLowerCase().replaceAll(' ', '_') + '.png'}'
+                        .toLowerCase(),
+                    width: 300,
+                    height: 300,
+                  ),
+                ),
+                const SizedBox(
+                    height: 20,
+                    width:
+                        300), //Mellemrum mellem billede af affaldskategori og affaldstype
+                Center(
+                  child: Text(
+                    'Affaldstype: ${item['category']}',
+                    style: const TextStyle(fontSize: 16),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ],
             ),
