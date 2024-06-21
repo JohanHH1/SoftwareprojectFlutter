@@ -70,7 +70,6 @@ class Affaldstyper extends StatelessWidget {
                 );
               },
                child: Container(
-                color: Colors.white,
         child: Container(
           child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -110,6 +109,6 @@ List<Atype> atyper = [
   Atype('assets/pap.png'),
   Atype('assets/glas.png'),
   Atype('assets/papir.png'),
-  Atype('assets/farligtaffald.png'),
+  Atype('assets/farligt_affald.png'),
   Atype('assets/tekstilaffald.png'),
 ];
