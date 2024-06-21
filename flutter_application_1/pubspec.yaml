@@ -24,12 +24,15 @@ dependencies:
   http: ^1.2.1
   syncfusion_flutter_maps: ^26.1.38
   flutter_map_marker_popup: ^7.0.0
+  url_launcher: ^6.3.0
+
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
+
 
 flutter:
   uses-material-design: true 
@@ -170,7 +173,6 @@ flutter:
     - assets/vin.png
     - assets/sølvpapir.png
     - assets/kniv.png
-    - assets/alubakke.png
     - assets/søm.png
     - assets/bekæmpelse.png
     - assets/klorin.png
@@ -181,3 +183,14 @@ flutter:
     - assets/vådservietter.png
     - assets/tennisbolde.png
     - assets/snavsetpapir.png
+    - assets/farligtinfo.png
+    - assets/glasinfo.png
+    - assets/restaffaldinfo.png
+    - assets/madaffaldinfo.png
+    - assets/papinfo.png
+    - assets/tekstilinfo.png
+    - assets/papinfo.png
+    - assets/papirinfo.png
+    - assets/metalinfo.png
+    - assets/plastinfo.png
+    - assets/alubakke.png

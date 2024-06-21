@@ -19,6 +19,7 @@ class Affaldstyper extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Oversigt over affaldstyperne'),
+        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 32, color: Colors.black),
         backgroundColor: Color.fromARGB(255, 152, 231, 159),
       ),
        body: Padding(
