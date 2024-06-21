@@ -54,11 +54,11 @@ class _ItemList1State extends State<ItemList1> {
         });
       } else {
         //Hvis der ikke er noget data
-        throw Exception('Failed to load JSON data');
+        throw Exception('Kunne ikke finde data');
       }
     } catch (e) {
       //Printer fejl
-      print('Error retrieving or parsing data: $e');
+      print('Der skete en fejl: $e');
     }
   }
 
@@ -126,13 +126,5 @@ class _ItemList1State extends State<ItemList1> {
         ],
       ),
     );
-  }
-
-  //dispose der rydder op og stopper det hele når brugeren er sendt hen til skraldet.
-  //Stopper listeners så app kører bedre.
-  @override
-  void dispose() {
-    searchController.dispose();
-    super.dispose();
   }
 }
