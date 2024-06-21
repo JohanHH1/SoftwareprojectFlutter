@@ -41,6 +41,7 @@ flutter:
     - assets/madaffald.png
     - assets/notDefined.png
     - assets/pap.png
+    - assets/papvin.png
     - assets/pasta.png
     - assets/pizzabox.png
     - assets/restaffald.png
@@ -69,8 +70,6 @@ flutter:
     - assets/hundefoder.png
     - assets/husholdningsfilm.png
     - assets/kødbakker.png
-    - assets/låg.png 
-    - assets/låg.png
     - assets/mel.png
     - assets/ødelagttøj.png
     - assets/perler.png
@@ -118,3 +117,39 @@ flutter:
     - assets/knæklys.png
     - assets/kort.png
     - assets/linser.png
+    - assets/skum.png
+    - assets/pander.png
+    - assets/lim.png
+    - assets/syltetøj.png
+    - assets/øl.png
+    - assets/knapbatteri.png
+    - assets/kondomer.png
+    - assets/hundeposer.png
+    - assets/håndsprit.png
+    - assets/hårspray.png
+    - assets/hår.png
+    - assets/chipsposer.png
+    - assets/benzin.png
+    - assets/juiceflasker.png
+    - assets/husholdningsfilm.png
+    - assets/mapper.png
+    - assets/medicinplast.png
+    - assets/smør.png
+    - assets/låg.png
+    - assets/katelog.png
+    - assets/papbakke.png
+    - assets/smør.png
+    - assets/æggebakke.png
+    - assets/nøgler.png
+    - assets/pærer.png
+    - assets/afløb.png
+    - assets/klorin.png
+    - assets/acetone.png
+    - assets/næsespray.png
+    - assets/toiletrens.png
+    - assets/engangsklude.png
+    - assets/gaffatape.png
+    - assets/knæklys.png
+    - assets/knæklys.png
+    - assets/sandpapir.png
+    - assets/bestik.png

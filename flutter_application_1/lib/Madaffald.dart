@@ -19,7 +19,7 @@ class Madaffald extends StatelessWidget {
             height: 200, // Adjust the height as needed
             width: 200, // Adjust the width as needed
             child: Image.asset(
-              'assets/bobleplast.png', // Replace with your image path
+              'assets/mapper.png', // Replace with your image path
               fit: BoxFit.cover, // Adjust the fit as needed
             ),
           ),

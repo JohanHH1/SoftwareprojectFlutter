@@ -390,7 +390,7 @@ class HomePage extends StatelessWidget {
                           child: const Column(
                             children: [
                               Image(
-                                image: AssetImage('assets/madaffald.png'),
+                                image: AssetImage('assets/mapper.png'),
                                 width: 200,
                                 height: 150,
                                 fit: BoxFit.contain,
