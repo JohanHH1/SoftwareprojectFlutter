@@ -110,6 +110,6 @@ List<Atype> atyper = [
   Atype('assets/pap.png'),
   Atype('assets/glas.png'),
   Atype('assets/papir.png'),
-  Atype('assets/farligt_affald.png'),
-  Atype('assets/tekstil.png'),
+  Atype('assets/farligtaffald.png'),
+  Atype('assets/tekstilaffald.png'),
 ];

@@ -64,7 +64,7 @@ class ItemDetailPage extends StatelessWidget {
                         20), // Mellemrum mellem sorteringstype og billede af affaldskategori
                 Center(
                   child: Image.asset(
-                    'assets/${item['category'] + '.png'}'.toLowerCase(),
+                    'assets/${item['category'].toLowerCase().replaceAll(' ', '_')+ '.png'}'.toLowerCase(),
                     width: 300,
                     height: 300,
                   ),
