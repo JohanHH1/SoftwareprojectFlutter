@@ -10,7 +10,6 @@ import 'package:url_launcher/url_launcher.dart';
 class Farligtaffald extends StatelessWidget {
   const Farligtaffald({super.key});
 
-
 void _launchURL() async {
   final url = Uri.parse('affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
   if (await canLaunchUrl(url)) {
@@ -51,7 +50,7 @@ void _launchURL() async {
             GestureDetector(
               onTap: _launchURL,
                   child: const Text(
-                    'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald',
+                    'For mere information',
                     style: TextStyle(
                       color: Colors.blue,
                       decoration: TextDecoration.underline,
