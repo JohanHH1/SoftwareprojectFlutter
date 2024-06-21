@@ -78,7 +78,15 @@ class _ItemList1State extends State<ItemList1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search Items'),
+        title: const Text(
+          'Find dit skrald',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            color: Color.fromARGB(255, 48, 40, 40),
+          ),
+        ),
+        backgroundColor: Color(-4072000),
       ),
       body: Column(
         children: [
@@ -87,7 +95,7 @@ class _ItemList1State extends State<ItemList1> {
             child: TextField(
               controller: searchController,
               decoration: const InputDecoration(
-                labelText: 'Search',
+                labelText: 'Søg',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.search),
               ),
