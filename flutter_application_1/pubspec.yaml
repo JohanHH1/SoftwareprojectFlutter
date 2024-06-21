@@ -57,14 +57,14 @@ flutter:
     - assets/brød.png
     - assets/plast.png
     - assets/glas.png
-    - assets/farligt_affald.png
+    - assets/farligtaffald.png
     - assets/papir.png
     - assets/metal.png
     - assets/tekstil.png
     - assets/afdækningsplast.png
     - assets/affaldssække.png
     - assets/aviser.png
-    - assets/Batterier.png
+    - assets/batterier.png
     - assets/bobleplast.png
     - assets/bon.png
     - assets/breve.png
@@ -165,3 +165,4 @@ flutter:
     - assets/vådservietter.png
     - assets/vatpinde.png
     - assets/linser.png
+    - assets/køkkenrullebeskidt.png
