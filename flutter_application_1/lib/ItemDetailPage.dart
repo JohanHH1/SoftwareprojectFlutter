@@ -54,7 +54,7 @@ class ItemDetailPage extends StatelessWidget {
                     height: 10), // Mellemrum mellem tekst og sorteringstype
                 Center(
                   child: Text(
-                    'Sorting type: ${item['category']}',
+                    'Affaldstype: ${item['category']}',
                     style: const TextStyle(fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
@@ -64,7 +64,8 @@ class ItemDetailPage extends StatelessWidget {
                         20), // Mellemrum mellem sorteringstype og billede af affaldskategori
                 Center(
                   child: Image.asset(
-                    'assets/${item['category'].toLowerCase().replaceAll(' ', '_')+ '.png'}'.toLowerCase(),
+                    'assets/${item['category'].toLowerCase().replaceAll(' ', '_') + '.png'}'
+                        .toLowerCase(),
                     width: 300,
                     height: 300,
                   ),
