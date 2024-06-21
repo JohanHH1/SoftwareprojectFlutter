@@ -88,6 +88,19 @@ class _MyHomePageState extends State<LocationPage> {
                ),
              ),
            );
+          //  } else if(choosen=='6'){
+          //  _markers6.add(
+          //    Marker(
+          //      width: 80.0,
+          //      height: 80.0,
+          //      point: firstCoordinate,
+          //      child: const Icon(
+          //        Icons.location_on,
+          //        color: Colors.blue,
+          //        size: 40.0,
+          //      ),
+          //    ),
+          //  );
             }  
        }
      }});
@@ -96,7 +109,6 @@ class _MyHomePageState extends State<LocationPage> {
        _errorMessage = 'Error loading markers: $e';
      });
    }
-   
   }
 
  @override
