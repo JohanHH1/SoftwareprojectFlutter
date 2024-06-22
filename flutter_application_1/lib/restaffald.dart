@@ -103,11 +103,14 @@ class Restaffald extends StatelessWidget {
             const Spacer(),
             GestureDetector(
               onTap: _restinfo,
-              child: const Text(
-                'For mere information',
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+                child: Text(
+                  'For mere information',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
               ),
             ),
