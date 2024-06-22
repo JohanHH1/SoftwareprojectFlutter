@@ -1,19 +1,14 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Affaldstyper.dart';
-import 'package:flutter_settings_bar_design/Farligtaffald.dart';
 import 'package:flutter_settings_bar_design/Glas.dart';
 import 'package:flutter_settings_bar_design/ItemDetailPage.dart';
 import 'package:flutter_settings_bar_design/Madaffald.dart';
 import 'package:flutter_settings_bar_design/Papir.dart';
-import 'package:flutter_settings_bar_design/Restaffald.dart';
 import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
 import 'package:flutter_settings_bar_design/pap.dart';
-import 'package:flutter_settings_bar_design/plast.dart';
-import 'package:flutter_settings_bar_design/tekstilaffald.dart';
 import 'package:readmore/readmore.dart';
-import 'trash_information_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -22,7 +17,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(-4072000),
+        backgroundColor: const Color(-4072000),
         title: const Text(
           'Sorteringshjælperen',
           style: TextStyle(
@@ -364,16 +359,17 @@ class HomePage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Affaldstyper()),
+                        MaterialPageRoute(
+                            builder: (context) => const Affaldstyper()),
                       );
                     },
-                    child: Text('Vis alle'),
+                    child: const Text('Vis alle'),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
-                child: Container(
+                child: SizedBox(
                   height: 160,
                   child: Scrollbar(
                     child: ListView(
@@ -384,7 +380,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Madaffald()),
+                                  builder: (context) => const Madaffald()),
                             );
                           },
                           child: const Column(
@@ -402,7 +398,8 @@ class HomePage extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Glas()),
+                              MaterialPageRoute(
+                                  builder: (context) => const Glas()),
                             );
                           },
                           child: const Column(
@@ -420,7 +417,8 @@ class HomePage extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Papir()),
+                              MaterialPageRoute(
+                                  builder: (context) => const Papir()),
                             );
                           },
                           child: const Column(
@@ -438,7 +436,8 @@ class HomePage extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Metal()),
+                              MaterialPageRoute(
+                                  builder: (context) => const Metal()),
                             );
                           },
                           child: const Column(
@@ -456,7 +455,8 @@ class HomePage extends StatelessWidget {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Pap()),
+                              MaterialPageRoute(
+                                  builder: (context) => const Pap()),
                             );
                           },
                           child: const Column(
@@ -476,8 +476,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(12, 0, 12, 4),
-                child: Container(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 4),
+                child: SizedBox(
                   height: 20,
                   child: RichText(
                     text: const TextSpan(
@@ -544,7 +544,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: NavigationBarr(),
+      bottomNavigationBar: const NavigationBarr(),
     );
   }
 }

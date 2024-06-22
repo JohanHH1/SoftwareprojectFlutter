@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,7 +5,8 @@ class Plast extends StatelessWidget {
   const Plast({super.key});
 
   void _plastinfo() async {
-    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-plast');
+    final link = Uri.parse(
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-plast');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
@@ -26,7 +26,7 @@ class Plast extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 181, 69, 203),
+        backgroundColor: const Color.fromARGB(255, 181, 69, 203),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -68,7 +68,8 @@ class Plast extends StatelessWidget {
                       Text(
                         'Ja, tak - det er plast',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -85,7 +86,8 @@ class Plast extends StatelessWidget {
                       Text(
                         'Nej, tak - det er ikke plast',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -115,7 +117,3 @@ class Plast extends StatelessWidget {
     );
   }
 }
-
-
-
-

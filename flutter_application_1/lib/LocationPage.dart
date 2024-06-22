@@ -93,8 +93,8 @@ class _MyHomePageState extends State<LocationPage> {
             firstCoordinate = LatLng(
                 coordinates[0][0][1],
                 coordinates[0][0]
-                    [0]); //          så tager vi det første og laver
-          } //                                                                               en markør der
+                    [0]); //så tager vi det første og laver en markør der
+          } //
           if (firstCoordinate != null) {
             // hvis der er en koorniat så fortsætter vi
             if (choosen == '1') {
@@ -149,7 +149,7 @@ class _MyHomePageState extends State<LocationPage> {
           'Kort over sorteringssteder',
           style: TextStyle(fontSize: 22),
         ),
-        backgroundColor: Color(-4072000),
+        backgroundColor: const Color(-4072000),
       ),
       body: Center(
         child: Column(
@@ -192,7 +192,8 @@ class _MyHomePageState extends State<LocationPage> {
                                 .withOpacity(0.3), // tilføjer skygge
                             spreadRadius: 2,
                             blurRadius: 5,
-                            offset: Offset(0, 2), // Ændring af skyggeeffekten
+                            offset:
+                                const Offset(0, 2), // Ændring af skyggeeffekten
                           ),
                         ],
                       ),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,7 +5,8 @@ class Farligtaffald extends StatelessWidget {
   const Farligtaffald({super.key});
 
   void _farligtinfo() async {
-    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
+    final link = Uri.parse(
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
@@ -59,7 +59,7 @@ class Farligtaffald extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
@@ -68,7 +68,8 @@ Row(
                       const Text(
                         'Ja, tak - det er faligt affald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 10),
                       RichText(
@@ -77,11 +78,13 @@ Row(
                           children: [
                             TextSpan(
                               text: '• ',
-                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                             TextSpan(
                               text: 'makeup',
-                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                           ],
                         ),
@@ -95,7 +98,8 @@ Row(
                       const Text(
                         'Nej, tak - det er ikke farligt affald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 10),
                       RichText(
@@ -104,20 +108,25 @@ Row(
                           children: [
                             TextSpan(
                               text: '• Medicinsrester\n ',
-                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                             TextSpan(
                               text: '• Kanyler\n',
-                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                             TextSpan(
-                              text: '•Tomme plastbeholdere og dunke fra fx milde rengøringsmidler og vaskemidler med faremærket,'
-                                   ' "sundhedsfare" (ligner et udråbstegn), skal sorteres som plast ',
-                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                              text:
+                                  '•Tomme plastbeholdere og dunke fra fx milde rengøringsmidler og vaskemidler med faremærket,'
+                                  ' "sundhedsfare" (ligner et udråbstegn), skal sorteres som plast ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                             TextSpan(
                               text: '•',
-                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                           ],
                         ),
@@ -144,7 +153,3 @@ Row(
     );
   }
 }
-
-
-
-

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,7 +5,8 @@ class Glas extends StatelessWidget {
   const Glas({super.key});
 
   void _glasinfo() async {
-    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-glas');
+    final link = Uri.parse(
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-glas');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
@@ -26,7 +26,7 @@ class Glas extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 17, 219, 192),
+        backgroundColor: const Color.fromARGB(255, 17, 219, 192),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -59,16 +59,17 @@ class Glas extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Ja, tak - det er glas',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -81,11 +82,12 @@ class Glas extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Nej, tak - det er ikke glas',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -115,7 +117,3 @@ class Glas extends StatelessWidget {
     );
   }
 }
-
-
-
-

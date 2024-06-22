@@ -20,7 +20,7 @@ class ItemDetailPage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20.0), // Grønd kant
+          padding: const EdgeInsets.all(20.0), // Grøn kant
           child: Container(
             padding: const EdgeInsets.all(30.0),
             decoration: BoxDecoration(

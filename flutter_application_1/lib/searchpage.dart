@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'ItemDetailPage.dart';
 
-class ItemList1 extends StatefulWidget {
+class Searchpage extends StatefulWidget {
   @override
-  _ItemList1State createState() => _ItemList1State();
+  _SearchpageState createState() => _SearchpageState();
 }
 
-class _ItemList1State extends State<ItemList1> {
+class _SearchpageState extends State<Searchpage> {
   List<Map<String, dynamic>> items = [];
   List<Map<String, dynamic>> filteredItems = [];
 

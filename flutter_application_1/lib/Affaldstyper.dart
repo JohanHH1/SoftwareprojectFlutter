@@ -12,51 +12,51 @@ import 'package:flutter_settings_bar_design/tekstilaffald.dart';
 
 class Affaldstyper extends StatelessWidget {
   const Affaldstyper({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Oversigt over affaldstyperne'),
-        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 32, color: Colors.black),
-        backgroundColor: Color.fromARGB(255, 152, 231, 159),
+        titleTextStyle: const TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+        backgroundColor: const Color(-4072000),
       ),
-       body: Padding(
-          padding: const EdgeInsets.all(7.0),
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, // Number of columns
-              mainAxisSpacing: 9.0, // Spacing between rows
-              crossAxisSpacing: 10.0, // Spacing between columns
-              childAspectRatio: 1.0, // Aspect ratio of the items
-            ),
-            itemCount: atyper.length,
-            itemBuilder: (BuildContext crontext, int index) {
-                return GestureDetector(
+      body: Padding(
+        padding: const EdgeInsets.all(7.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // Number of columns
+            mainAxisSpacing: 9.0, // Spacing between rows
+            crossAxisSpacing: 10.0, // Spacing between columns
+            childAspectRatio: 1.0, // Aspect ratio of the items
+          ),
+          itemCount: atyper.length,
+          itemBuilder: (BuildContext crontext, int index) {
+            return GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
                     switch (index) {
                       case 0:
-                        return Madaffald();
+                        return const Madaffald();
                       case 1:
-                        return Restaffald();
+                        return const Restaffald();
                       case 2:
-                        return Plast();
+                        return const Plast();
                       case 3:
-                        return Metal();
+                        return const Metal();
                       case 4:
-                        return Pap();
+                        return const Pap();
                       case 5:
-                        return Glas();
-                      case 6: 
-                        return Papir();
+                        return const Glas();
+                      case 6:
+                        return const Papir();
                       case 7:
-                        return Farligtaffald();
+                        return const Farligtaffald();
                       case 8:
-                        return Tekstilaffald();
+                        return const Tekstilaffald();
                       default:
                         return Scaffold(
                           appBar: AppBar(
@@ -70,29 +70,29 @@ class Affaldstyper extends StatelessWidget {
                   }),
                 );
               },
-               child: Container(
-        child: Container(
-          child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: Image.asset(
-                          atyper[index].billede,
-                          fit: BoxFit.contain,
+              child: Container(
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Image.asset(
+                            atyper[index].billede,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
         ),
       ),
-    ),
-   );
-  },
-),
-),
- bottomNavigationBar: NavigationBarr(),
+      bottomNavigationBar: const NavigationBarr(),
     );
   }
 }
@@ -102,6 +102,7 @@ class Atype {
 
   Atype(this.billede);
 }
+
 List<Atype> atyper = [
   Atype('assets/madaffald.png'),
   Atype('assets/restaffald.png'),

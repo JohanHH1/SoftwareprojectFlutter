@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,7 +5,8 @@ class Restaffald extends StatelessWidget {
   const Restaffald({super.key});
 
   void _restinfo() async {
-    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-restaffald');
+    final link = Uri.parse(
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-restaffald');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
@@ -26,7 +26,7 @@ class Restaffald extends StatelessWidget {
             color: Color.fromARGB(255, 236, 232, 232),
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 34, 34, 33),
+        backgroundColor: const Color.fromARGB(255, 34, 34, 33),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -59,16 +59,17 @@ class Restaffald extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Ja, tak - det er restaffald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -81,11 +82,12 @@ class Restaffald extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Nej, tak - det er ikke restaffald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -115,7 +117,3 @@ class Restaffald extends StatelessWidget {
     );
   }
 }
-
-
-
-

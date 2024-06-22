@@ -1,6 +1,3 @@
-
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -8,7 +5,8 @@ class Metal extends StatelessWidget {
   const Metal({super.key});
 
   void _metalinfo() async {
-    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-metal');
+    final link = Uri.parse(
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-metal');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
@@ -28,7 +26,7 @@ class Metal extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 128, 124, 124),
+        backgroundColor: const Color.fromARGB(255, 128, 124, 124),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -61,16 +59,17 @@ class Metal extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Ja, tak - det er metal',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -83,11 +82,12 @@ class Metal extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Nej, tak - det er ikke metal',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -117,7 +117,3 @@ class Metal extends StatelessWidget {
     );
   }
 }
-
-
-
-

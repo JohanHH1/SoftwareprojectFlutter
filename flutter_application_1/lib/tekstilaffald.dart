@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,7 +5,8 @@ class Tekstilaffald extends StatelessWidget {
   const Tekstilaffald({super.key});
 
   void _tekstilinfo() async {
-    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
+    final link = Uri.parse(
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
@@ -26,7 +26,7 @@ class Tekstilaffald extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 187, 71, 71),
+        backgroundColor: const Color.fromARGB(255, 187, 71, 71),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -59,16 +59,17 @@ class Tekstilaffald extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Ja, tak - det er tekstilaffald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -81,11 +82,12 @@ class Tekstilaffald extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Nej, tak - det er ikke tekstilaffald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -115,7 +117,3 @@ class Tekstilaffald extends StatelessWidget {
     );
   }
 }
-
-
-
-

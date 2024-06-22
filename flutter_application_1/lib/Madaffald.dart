@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,7 +5,8 @@ class Madaffald extends StatelessWidget {
   const Madaffald({super.key});
 
   void _launchURL() async {
-    final url = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-madaffald');
+    final url = Uri.parse(
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-madaffald');
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
@@ -26,7 +26,7 @@ class Madaffald extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 18, 162, 62),
+        backgroundColor: const Color.fromARGB(255, 18, 162, 62),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -59,16 +59,17 @@ class Madaffald extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Ja, tak - det er madaffald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -81,11 +82,12 @@ class Madaffald extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Nej, tak - det er ikke madaffald',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
@@ -115,7 +117,3 @@ class Madaffald extends StatelessWidget {
     );
   }
 }
-
-
-
-
