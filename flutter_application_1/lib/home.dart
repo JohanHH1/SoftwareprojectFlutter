@@ -341,17 +341,18 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 16, right: 10),
-                child: Text(
-                  'Affaldstyper',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
+const Padding(
+  padding: EdgeInsets.only(left: 16, right: 10, top: 20, bottom: 10),
+  child: Text(
+    'Affaldstyper',
+    style: TextStyle(
+      color: Colors.black,
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
