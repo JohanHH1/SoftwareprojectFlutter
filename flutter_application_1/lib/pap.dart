@@ -59,23 +59,45 @@ class Pap extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Ja, tak - det er pap',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- makeup',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Skotøjsæsker \n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Æggebakker (rene og tørre)\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Karton\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Æsken/papkassen fra f.eks. tandpasta og morgenmadsprodukter\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),       
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -83,36 +105,63 @@ class Pap extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Nej, tak - det er ikke pap',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- Medicinsrester\n - Kanyler',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Pizzabakker eller en anden emballage med madrester(restaffald)\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '•Flamingo\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text:
+                                  '• Papir \n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Vådt pap\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            const Spacer(),
-            GestureDetector(
-              onTap: _papinfo,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-                child: Text(
-                  'For mere information',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
+            Spacer(),
+            Row(
+              children: [
+                const Text(
+                  'Du behøver ikke fjerne clips, tape, labels eller lignende ',
+                ),
+                GestureDetector(
+                  onTap: _papinfo,
+                  child: const Text(
+                    'for mere information',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

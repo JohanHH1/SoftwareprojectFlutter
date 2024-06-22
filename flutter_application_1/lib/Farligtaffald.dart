@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -77,15 +78,25 @@ class Farligtaffald extends StatelessWidget {
                         text: const TextSpan(
                           children: [
                             TextSpan(
-                              text: '• ',
+                              text: '• Makeup\n ',
                               style:
                                   TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                             TextSpan(
-                              text: 'makeup',
+                              text: '• Neglelak\n',
                               style:
                                   TextStyle(fontSize: 16, color: Colors.grey),
                             ),
+                            TextSpan(
+                              text: '• Batterier og elpærer\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Maling, lim og olierester\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),       
                           ],
                         ),
                       ),
@@ -118,13 +129,12 @@ class Farligtaffald extends StatelessWidget {
                             ),
                             TextSpan(
                               text:
-                                  '•Tomme plastbeholdere og dunke fra fx milde rengøringsmidler og vaskemidler med faremærket,'
-                                  ' "sundhedsfare" (ligner et udråbstegn), skal sorteres som plast ',
+                                  '• Olie \n ',
                               style:
                                   TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                             TextSpan(
-                              text: '•',
+                              text: '• Skarpe og spidse genstande (metal) \n',
                               style:
                                   TextStyle(fontSize: 16, color: Colors.grey),
                             ),
@@ -136,16 +146,23 @@ class Farligtaffald extends StatelessWidget {
                 ),
               ],
             ),
-            const Spacer(),
-            GestureDetector(
-              onTap: _farligtinfo,
-              child: const Text(
-                'For mere information',
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
+            Spacer(),
+            Row(
+              children: [
+                const Text(
+                  'En god huskeregl er, at affald med faremærker må komme i kassen. Hvis du er tvivl mere, se evt. ',
                 ),
-              ),
+                GestureDetector(
+                  onTap: _farligtinfo,
+                  child: const Text(
+                    'for mere information',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

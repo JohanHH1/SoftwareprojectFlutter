@@ -59,23 +59,45 @@ class Metal extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const Row(
+              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Ja, tak - det er metal',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- makeup',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Gryder, pander og bestik \n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Søm og skruer\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Øl- og sodavandsdåser\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Sølvpapir og foliebakker\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),       
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -83,36 +105,63 @@ class Metal extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Nej, tak - det er ikke metal',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- Medicinsrester\n - Kanyler',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Elektronik (ting med ledning/batterier)\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: 'Metalspande f.eks. maling (farligt affald) \n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text:
+                                  '• Spraydåser(farligt affald) \n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Kanyler (apotek) \n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            const Spacer(),
-            GestureDetector(
-              onTap: _metalinfo,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-                child: Text(
-                  'For mere information',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
+            Spacer(),
+            Row(
+              children: [
+                const Text(
+                  'Du behøver ikke skylle eller fjerne klistermærker ',
+                ),
+                GestureDetector(
+                  onTap: _metalinfo,
+                  child: const Text(
+                    'for mere information',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

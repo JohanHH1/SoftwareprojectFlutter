@@ -90,7 +90,6 @@ flutter:
     - assets/juiceflasker.png
     - assets/glasskår.png
     - assets/konservesglas.png
-    - assets/sodadåse.png
     - assets/kapsler.png
     - assets/kniv.png
     - assets/osteklinger.png
@@ -194,3 +193,8 @@ flutter:
     - assets/metalinfo.png
     - assets/plastinfo.png
     - assets/alubakke.png
+    - assets/sodadåse.png
+    - assets/duge.png
+    - assets/sengelinned.png
+    - assets/alubakke.png
+    - assets/gardiner.png

@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Madaffald extends StatelessWidget {
   const Madaffald({super.key});
 
-  void _launchURL() async {
+  void _madaffaldinfo() async {
     final url = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-madaffald');
     if (await canLaunchUrl(url)) {
@@ -59,23 +59,45 @@ class Madaffald extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const Row(
+              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Ja, tak - det er madaffald',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- ',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Æggeskaller \n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Kaffefiltre og teposer \n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Afskårne blomster og krydderurter\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Al maddaffald - råt og tilbedredt\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),       
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -83,36 +105,63 @@ class Madaffald extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Nej, tak - det er ikke madaffald',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '-',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Jord\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Dyrestrøelse f.eks. kattegrus\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text:
+                                  '• Bagepapir og muffinpapir(restaffald) \n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Servietter(restaffald)\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            const Spacer(),
-            GestureDetector(
-              onTap: _launchURL,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-                child: Text(
-                  'For mere information',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
+            Spacer(),
+            Row(
+              children: [
+                const Text(
+                  ' Madaffald skal altid sorteres i de udleverede grønne bioposer. Husk at binde knude på poserne for at minimere lugten ',
+                ),
+                GestureDetector(
+                  onTap: _madaffaldinfo,
+                  child: const Text(
+                    'for mere information',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

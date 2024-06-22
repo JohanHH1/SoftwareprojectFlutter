@@ -6,7 +6,7 @@ class Tekstilaffald extends StatelessWidget {
 
   void _tekstilinfo() async {
     final link = Uri.parse(
-        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
+        'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-tekstilaffald');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
@@ -59,23 +59,45 @@ class Tekstilaffald extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
-                        'Ja, tak - det er tekstilaffald',
+                      const Text(
+                        'Ja, tak - det er tekstil',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- makeup',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Hullet, plettet og slidt tøj\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Enlige sokker\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Håndklæder og klude\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '•Gardiner og tæpper\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),       
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -83,36 +105,63 @@ class Tekstilaffald extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
-                        'Nej, tak - det er ikke tekstilaffald',
+                      const Text(
+                        'Nej, tak - det er ikke tekstil',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- Medicinsrester\n - Kanyler',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Tøj med rester af maling\n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Våde og fugtige tekstiler\n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text:
+                                  '• Læder tøj \n ',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Gulvtæpper \n',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-            const Spacer(),
-            GestureDetector(
-              onTap: _tekstilinfo,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-                child: Text(
-                  'For mere information',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
+            Spacer(),
+            Row(
+              children: [
+                const Text(
+                  'Aflevere tekstil i klare poser med knude på ',
+                ),
+                GestureDetector(
+                  onTap: _tekstilinfo,
+                  child: const Text(
+                    'for mere information',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
@@ -120,3 +169,5 @@ class Tekstilaffald extends StatelessWidget {
     );
   }
 }
+
+
