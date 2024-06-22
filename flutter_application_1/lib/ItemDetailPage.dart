@@ -22,7 +22,7 @@ class ItemDetailPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0), // Grøn kant
           child: Container(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 colors: [Color.fromARGB(255, 95, 174, 98), Color(-4072000)],
@@ -41,7 +41,7 @@ class ItemDetailPage extends StatelessWidget {
                     height: 300,
                   ),
                 ),
-                const SizedBox(height: 20), // Mellemrum mellem billede og tekst
+                const SizedBox(height: 10), // Mellemrum mellem billede og tekst
                 Center(
                   child: Text(
                     item['name'],

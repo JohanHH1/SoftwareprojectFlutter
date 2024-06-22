@@ -75,25 +75,25 @@ class HomePage extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) =>
                                       const ItemDetailPage(item: {
-                                        'name': 'Metaldåser',
+                                        'name': 'Sølvpapir',
                                         'category': 'Metal',
-                                        'image': 'mutti.png',
+                                        'image': 'sølvpapir.png',
                                         'tips':
-                                            'Metal, der har indeholdt mad, skal tømmes, så godt du kan. Du behøver ikke at skylle emballagen eller pille klistermærker af.',
+                                            'Sølvpapir, der har indeholdt mad, skal tømmes, så godt du kan.',
                                       })),
                             );
                           },
                           child: const Column(
                             children: [
                               Image(
-                                image: AssetImage('assets/mutti.png'),
+                                image: AssetImage('assets/sølvpapir.png'),
                                 width: 200,
                                 height: 150,
                                 fit: BoxFit.contain,
                               ),
                               Spacer(),
                               Text(
-                                'Metaldåser (alle)',
+                                'Sølvpapir',
                                 //textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -246,24 +246,24 @@ class HomePage extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) =>
                                       const ItemDetailPage(item: {
-                                        'name': 'Æg og æggeskaller',
-                                        'category': 'Madaffald',
-                                        'image': 'æg.png',
-                                        'tips': '',
+                                        'name': 'Pizzabakke',
+                                        'category': 'Restaffald',
+                                        'image': 'pizzabox.png',
+                                        'tips': 'Beskidt pap, som pizzabakker, kan desværre ikke genanvendes. Derfor skal det sorteres som restaffald.',
                                       })),
                             );
                           },
                           child: const Column(
                             children: [
                               Image(
-                                image: AssetImage('assets/æg.png'),
+                                image: AssetImage('assets/pizzabox.png'),
                                 width: 200,
                                 height: 150,
                                 fit: BoxFit.contain,
                               ),
                               Spacer(),
                               Text(
-                                'Æg og æggeskaller',
+                                'Pizzabakke',
                                 //textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -271,7 +271,7 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                'Madaffald',
+                                'Restaffald',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 21, 82, 23),
