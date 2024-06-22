@@ -5,12 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 class Glas extends StatelessWidget {
   const Glas({super.key});
 
-  void _launchURL() async {
-    final url = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-glas');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
+  void _glasinfo() async {
+    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-glas');
+    if (await canLaunchUrl(link)) {
+      await launchUrl(link);
     } else {
-      throw 'Could not launch $url';
+      throw 'Kan ikke åbne $link';
     }
   }
 
@@ -100,7 +100,7 @@ class Glas extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: _launchURL,
+              onTap: _glasinfo,
               child: const Text(
                 'For mere information',
                 style: TextStyle(

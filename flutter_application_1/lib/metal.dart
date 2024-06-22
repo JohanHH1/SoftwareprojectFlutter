@@ -1,16 +1,18 @@
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Metal extends StatelessWidget {
   const Metal({super.key});
 
-  void _launchURL() async {
-    final url = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-metal');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
+  void _metalinfo() async {
+    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-metal');
+    if (await canLaunchUrl(link)) {
+      await launchUrl(link);
     } else {
-      throw 'Could not launch $url';
+      throw 'Kan ikke åbne $link';
     }
   }
 
@@ -100,7 +102,7 @@ class Metal extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: _launchURL,
+              onTap: _metalinfo,
               child: const Text(
                 'For mere information',
                 style: TextStyle(

@@ -5,12 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 class Tekstilaffald extends StatelessWidget {
   const Tekstilaffald({super.key});
 
-  void _launchURL() async {
-    final url = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
+  void _tekstilinfo() async {
+    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
+    if (await canLaunchUrl(link)) {
+      await launchUrl(link);
     } else {
-      throw 'Could not launch $url';
+      throw 'Kan ikke åbne $link';
     }
   }
 
@@ -100,7 +100,7 @@ class Tekstilaffald extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: _launchURL,
+              onTap: _tekstilinfo,
               child: const Text(
                 'For mere information',
                 style: TextStyle(

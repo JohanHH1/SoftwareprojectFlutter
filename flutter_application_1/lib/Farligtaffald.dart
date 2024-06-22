@@ -5,12 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 class Farligtaffald extends StatelessWidget {
   const Farligtaffald({super.key});
 
-  void _launchURL() async {
-    final url = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
+  void _farligtinfo() async {
+    final link = Uri.parse('https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
+    if (await canLaunchUrl(link)) {
+      await launchUrl(link);
     } else {
-      throw 'Could not launch $url';
+      throw 'Kan ikke åbne $link';
     }
   }
 
@@ -59,39 +59,68 @@ class Farligtaffald extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   child: Column(
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'Ja, tak - det er faligt affald',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- makeup',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• ',
+                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: 'makeup',
+                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
                 Expanded(
                   child: Column(
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'Nej, tak - det er ikke farligt affald',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '- Medicinsrester\n - Kanyler',
+                      const SizedBox(height: 10),
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        text: const TextSpan(
+                          children: [
+                            TextSpan(
+                              text: '• Medicinsrester\n ',
+                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '• Kanyler\n',
+                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '•Tomme plastbeholdere og dunke fra fx milde rengøringsmidler og vaskemidler med faremærket,'
+                                   ' "sundhedsfare" (ligner et udråbstegn), skal sorteres som plast ',
+                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                            TextSpan(
+                              text: '•',
+                              style: TextStyle(fontSize: 16, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -100,7 +129,7 @@ class Farligtaffald extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: _launchURL,
+              onTap: _farligtinfo,
               child: const Text(
                 'For mere information',
                 style: TextStyle(
