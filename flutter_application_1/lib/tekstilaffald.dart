@@ -28,7 +28,7 @@ class Tekstilaffald extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 187, 71, 71),
       ),
-      body: SingleChildScrollView(
+      body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
