@@ -28,7 +28,7 @@ class Restaffald extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 34, 34, 33),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,12 +145,13 @@ class Restaffald extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
+                const Flexible(
+                child: Text(
                   'Du behøver ikke fjerne clips, tape, labels eller lignende ',
                 ),
+              ),
                 GestureDetector(
                   onTap: _restinfo,
                   child: const Text(

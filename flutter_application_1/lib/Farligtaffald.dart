@@ -29,7 +29,7 @@ class Farligtaffald extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 219, 17, 17),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,11 +146,12 @@ class Farligtaffald extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
+                Flexible(
+                child: Text(
                   'En god huskeregl er, at affald med faremærker må komme i kassen. Hvis du er tvivl mere, se evt. ',
+                ),
                 ),
                 GestureDetector(
                   onTap: _farligtinfo,

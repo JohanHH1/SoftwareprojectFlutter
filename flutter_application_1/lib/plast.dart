@@ -28,7 +28,7 @@ class Plast extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 181, 69, 203),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,11 +146,12 @@ class Plast extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
-                  ' Emballage, der har indeholdt mad eller drikke, skal tømmes, så godt du kan ',
+                Flexible(
+                child: Text(
+                  'Emballage, der har indeholdt mad eller drikke, skal tømmes, så godt du kan ',
+                  ),
                 ),
                 GestureDetector(
                   onTap: _plastinfo,

@@ -28,7 +28,7 @@ class Madaffald extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 18, 162, 62),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,11 +145,12 @@ class Madaffald extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
+                Flexible(
+                child: Text(
                   ' Madaffald skal altid sorteres i de udleverede grønne bioposer. Husk at binde knude på poserne for at minimere lugten ',
+                ),
                 ),
                 GestureDetector(
                   onTap: _madaffaldinfo,

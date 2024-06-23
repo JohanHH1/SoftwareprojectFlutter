@@ -28,7 +28,7 @@ class Papir extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 125, 207, 229),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,11 +145,12 @@ class Papir extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
+                const Flexible(
+                child: Text(
                   'Pair skal være rent og tørt. Clips og tape må gerne sidde på ',
+                ),
                 ),
                 GestureDetector(
                   onTap: _papirinfo,

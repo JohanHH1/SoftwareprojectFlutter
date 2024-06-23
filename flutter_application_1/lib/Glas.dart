@@ -28,7 +28,7 @@ class Glas extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 17, 219, 192),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +111,7 @@ class Glas extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       RichText(
                         textAlign: TextAlign.center,
                         text: const TextSpan(
@@ -145,12 +145,13 @@ class Glas extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
-                  'I dag blive det meste glas knust og smeltet om til nye glasprodukter',
+                const Flexible(
+                child: Text(
+                  'I dag blive det meste glas knust og smeltet om til nye glasprodukter ',
                 ),
+            ),
                 GestureDetector(
                   onTap: _glasinfo,
                   child: const Text(

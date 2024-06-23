@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -28,7 +29,7 @@ class Tekstilaffald extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 187, 71, 71),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,11 +146,12 @@ class Tekstilaffald extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
+                const Flexible(
+                child: Text(
                   'Aflevere tekstil i klare poser med knude på ',
+                ),
                 ),
                 GestureDetector(
                   onTap: _tekstilinfo,

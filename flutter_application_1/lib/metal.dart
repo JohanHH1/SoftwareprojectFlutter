@@ -28,7 +28,7 @@ class Metal extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 128, 124, 124),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,12 +145,13 @@ class Metal extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
             Row(
               children: [
-                const Text(
+                const Flexible(
+                child: Text(
                   'Du behøver ikke skylle eller fjerne klistermærker ',
                 ),
+            ),
                 GestureDetector(
                   onTap: _metalinfo,
                   child: const Text(
