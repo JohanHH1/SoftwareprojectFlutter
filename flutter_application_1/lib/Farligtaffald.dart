@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,7 +28,7 @@ class Farligtaffald extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 219, 17, 17),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,6 +166,6 @@ class Farligtaffald extends StatelessWidget {
           ],
         ),
       ),
-    );
+      );
   }
 }

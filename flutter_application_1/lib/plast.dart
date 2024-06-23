@@ -28,7 +28,7 @@ class Plast extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 181, 69, 203),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
