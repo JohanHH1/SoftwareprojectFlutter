@@ -28,7 +28,7 @@ class Restaffald extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 34, 34, 33),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

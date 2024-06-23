@@ -28,7 +28,7 @@ class Glas extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 17, 219, 192),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,6 +166,6 @@ class Glas extends StatelessWidget {
           ],
         ),
       ),
-    );
+      );
   }
 }

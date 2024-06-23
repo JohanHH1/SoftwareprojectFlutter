@@ -28,7 +28,7 @@ class Pap extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 233, 199, 120),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
