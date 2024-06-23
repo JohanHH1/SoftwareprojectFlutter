@@ -32,60 +32,55 @@ class Affaldstyper extends StatelessWidget {
             childAspectRatio: 1.0, // Aspect ratio of the items
           ),
           itemCount: atyper.length,
-          itemBuilder: (BuildContext crontext, int index) {
+          itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    switch (index) {
-                      case 0:
-                        return const Madaffald();
-                      case 1:
-                        return const Restaffald();
-                      case 2:
-                        return const Plast();
-                      case 3:
-                        return const Metal();
-                      case 4:
-                        return const Pap();
-                      case 5:
-                        return const Glas();
-                      case 6:
-                        return const Papir();
-                      case 7:
-                        return const Farligtaffald();
-                      case 8:
-                        return const Tekstilaffald();
-                      default:
-                        return Scaffold(
-                          appBar: AppBar(
-                            title: Text('Page $index'),
-                          ),
-                          body: Center(
-                            child: Text('Page $index'),
-                          ),
-                        );
-                    }
-                  }),
-                );
+                try {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      switch (index) {
+                        case 0:
+                          return const Madaffald();
+                        case 1:
+                          return const Restaffald();
+                        case 2:
+                          return const Plast();
+                        case 3:
+                          return const Metal();
+                        case 4:
+                          return const Pap();
+                        case 5:
+                          return const Glas();
+                        case 6:
+                          return const Papir();
+                        case 7:
+                          return const Farligtaffald();
+                        case 8:
+                          return const Tekstilaffald();
+                        default:
+                          throw Exception('Ugyldig indeks: $index');
+                      }
+                    }),
+                  );
+                } catch (e) {
+                  print(e.toString()); // Handle the exception appropriately
+                }
               },
               child: Container(
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: Image.asset(
-                            atyper[index].billede,
-                            fit: BoxFit.contain,
-                          ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Image.asset(
+                          atyper[index].billede,
+                          fit: BoxFit.contain,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             );
