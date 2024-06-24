@@ -65,7 +65,7 @@ class ItemDetailPage extends StatelessWidget {
                       ),
                     Expanded(
                       child: Text(
-                        '${item['tips']}',
+                        '${item['tips']}', 
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -85,7 +85,7 @@ class ItemDetailPage extends StatelessWidget {
                 const SizedBox(
                     height: 20,
                     width:
-                        300), //Mellemrum mellem billede af affaldskategori og affaldstype
+                        300), // Mellemrum mellem billede af affaldskategori og affaldstype
                 Center(
                   child: Text(
                     'Affaldstype: ${item['category']}',
@@ -101,29 +101,3 @@ class ItemDetailPage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-/*
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (item['image'] != null)
-              Image.asset(
-                'assets/${item['image']}',
-                width: 100,
-                height: 100,
-              ),
-            SizedBox(height: 8),
-            Text('Name: ${item['name']}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            SizedBox(height: 8),
-            Text('Category: ${item['category']}', style: TextStyle(fontSize: 16)),
-            SizedBox(height: 8),
-            Text('Description: ${item['description']}', style: TextStyle(fontSize: 16)),
-          ],
-        ),
-      ),
-      */

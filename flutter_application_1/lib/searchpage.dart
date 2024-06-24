@@ -9,8 +9,8 @@ class Searchpage extends StatefulWidget {
 }
 
 class _SearchpageState extends State<Searchpage> {
-  List<Map<String, dynamic>> items = [];
-  List<Map<String, dynamic>> filteredItems = [];
+  List<Map<String, dynamic>> affald = [];
+  List<Map<String, dynamic>> sorteretAffald = [];
 
   //Håndterer inputs i søgefeltet
   TextEditingController searchController = TextEditingController();
@@ -18,14 +18,14 @@ class _SearchpageState extends State<Searchpage> {
   @override
   void initState() {
     super.initState();
-    fetchItems();
-    //En listener der kalder "filterItems" hver kan input ændrer sig i søgefeltet
+    hentAffald();
+    //En listener der kalder "sorterAffald" hver kan input ændrer sig i søgefeltet
     searchController.addListener(() {
-      filterItems();
+      sorterAffald();
     });
   }
 
-  Future<void> fetchItems() async {
+  Future<void> hentAffald() async {
     try {
       //Henter roden til vores firebase
       final storageRef = FirebaseStorage.instance.ref();
@@ -49,8 +49,8 @@ class _SearchpageState extends State<Searchpage> {
 
         // Opdaterer tilstanden
         setState(() {
-          items = itemDetails;
-          filteredItems = itemDetails;
+          affald = itemDetails;
+          sorteretAffald = itemDetails;
         });
       } else {
         //Hvis der ikke er noget data
@@ -64,10 +64,10 @@ class _SearchpageState extends State<Searchpage> {
 
   //Sorterer skrald baseret på input i søgefeltet
   //Sørger for kun at vise de ting man er ved at søge på
-  void filterItems() {
+  void sorterAffald() {
     final query = searchController.text.toLowerCase();
     setState(() {
-      filteredItems = items.where((item) {
+      sorteretAffald = affald.where((item) {
         final name = item['name'].toString().toLowerCase();
         return name.contains(query);
       }).toList();
@@ -104,9 +104,9 @@ class _SearchpageState extends State<Searchpage> {
           //Viser listen af sorterede ting.
           Expanded(
             child: ListView.builder(
-              itemCount: filteredItems.length,
+              itemCount: sorteretAffald.length,
               itemBuilder: (context, index) {
-                final item = filteredItems[index];
+                final item = sorteretAffald[index];
                 return ListTile(
                   title: Text(item['name']),
                   subtitle: Text(item['category']),

@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Madaffald extends StatelessWidget {
   const Madaffald({super.key});
 
+// funktion til at håndtere url, så den åbner i browser i appen
   void _madaffaldinfo() async {
     final url = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-madaffald');
@@ -147,12 +148,12 @@ class Madaffald extends StatelessWidget {
             ),
             Row(
               children: [
-                Flexible(
+                Flexible( // gør at teksten kun tage den plads den skal bruge, selvom den er i en row
                 child: Text(
                   ' Madaffald skal altid sorteres i de udleverede grønne bioposer. Husk at binde knude på poserne for at minimere lugten ',
                 ),
                 ),
-                GestureDetector(
+                GestureDetector( // sender brugeren til linket ved at trykke på for mere information der indeholder linket
                   onTap: _madaffaldinfo,
                   child: const Text(
                     'for mere information',

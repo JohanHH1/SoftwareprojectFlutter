@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Tekstilaffald extends StatelessWidget {
   const Tekstilaffald({super.key});
 
+// funktion til at håndtere url, så den åbner i browser i appen
   void _tekstilinfo() async {
     final link = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-tekstilaffald');
@@ -148,12 +149,12 @@ class Tekstilaffald extends StatelessWidget {
             ),
             Row(
               children: [
-                const Flexible(
+                const Flexible( // gør at teksten kun tage den plads den skal bruge, selvom den er i en row
                 child: Text(
                   'Aflevere tekstil i klare poser med knude på ',
                 ),
                 ),
-                GestureDetector(
+                GestureDetector( // sender brugeren til linket ved at trykke på for mere information der indeholder linket
                   onTap: _tekstilinfo,
                   child: const Text(
                     'for mere information',
