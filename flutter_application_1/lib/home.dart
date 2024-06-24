@@ -205,7 +205,7 @@ class HomePage extends StatelessWidget {
                                       const ItemDetailPage(item: {
                                         'name': 'Skyrbøtte',
                                         'category': 'Plast',
-                                        'image': 'skyr.PNG',
+                                        'image': 'skyr.png',
                                         'tips':
                                             'Tøm emballagen for indhold, så godt du kan. Du behøver ikke at skylle eller vaske den.',
                                       })),
@@ -214,7 +214,7 @@ class HomePage extends StatelessWidget {
                           child: const Column(
                             children: [
                               Image(
-                                image: AssetImage('assets/skyr.PNG'),
+                                image: AssetImage('assets/skyr.png'),
                                 width: 200,
                                 height: 150,
                                 fit: BoxFit.contain,
