@@ -4,7 +4,7 @@ import 'package:flutter_settings_bar_design/Glas.dart';
 import 'package:flutter_settings_bar_design/Papir.dart';
 import 'package:flutter_settings_bar_design/madaffald.dart';
 import 'package:flutter_settings_bar_design/metal.dart';
-import 'package:flutter_settings_bar_design/navigation_bar.dart';
+import 'package:flutter_settings_bar_design/Navigation_bar.dart';
 import 'package:flutter_settings_bar_design/pap.dart';
 import 'package:flutter_settings_bar_design/Plast.dart';
 import 'package:flutter_settings_bar_design/Restaffald.dart';
