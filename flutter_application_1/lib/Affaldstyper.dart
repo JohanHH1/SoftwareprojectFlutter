@@ -24,22 +24,22 @@ class Affaldstyper extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(7.0),
-        child: GridView.builder(
+        child: GridView.builder( // hvordan hver celle bliver bygget op
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, // Number of columns
             mainAxisSpacing: 9.0, // Spacing between rows
             crossAxisSpacing: 10.0, // Spacing between columns
             childAspectRatio: 1.0, // Aspect ratio of the items
           ),
-          itemCount: atyper.length,
+          itemCount: atyper.length,  // viser antallet celler i grid
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: () {
-                try {
+                try { // try-catch der håndtere fejl 
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) {
-                      switch (index) {
+                      switch (index) { // switch case - så de bliver indekseret og vist korrekt
                         case 0:
                           return const Madaffald();
                         case 1:
@@ -75,7 +75,7 @@ class Affaldstyper extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(2.0),
                         child: Image.asset(
-                          atyper[index].billede,
+                          atyper[index].billede, // anvender vores liste så den displayer billeder i rækkefølge
                           fit: BoxFit.contain,
                         ),
                       ),
@@ -87,17 +87,18 @@ class Affaldstyper extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar: const NavigationBarr(),
+      bottomNavigationBar: const NavigationBarr(), 
     );
   }
 }
 
+// klsase Atype som håndterer billeder 
 class Atype {
   final String billede;
 
   Atype(this.billede);
 }
-
+// liste over alle billederne samt deres rækkefølge de skal vises i 
 List<Atype> atyper = [
   Atype('assets/madaffald.png'),
   Atype('assets/restaffald.png'),

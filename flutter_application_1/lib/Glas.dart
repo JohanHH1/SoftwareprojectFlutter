@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Glas extends StatelessWidget {
   const Glas({super.key});
 
+// funktion til at håndtere url, så den åbner i browser i appen
   void _glasinfo() async {
     final link = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-glas');
@@ -147,12 +148,12 @@ class Glas extends StatelessWidget {
             ),
             Row(
               children: [
-                const Flexible(
+                const Flexible( // gør at teksten kun tage den plads den skal bruge, selvom den er i en row
                 child: Text(
                   'I dag blive det meste glas knust og smeltet om til nye glasprodukter ',
                 ),
             ),
-                GestureDetector(
+                GestureDetector( // sender brugeren til linket ved at trykke på for mere information der indeholder linket
                   onTap: _glasinfo,
                   child: const Text(
                     'for mere information',

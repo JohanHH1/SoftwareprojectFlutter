@@ -35,18 +35,6 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /*  SizedBox(height: 20),
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text(
-                  'Velkommen!',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 112, 70, 7),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ), */
               const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text(

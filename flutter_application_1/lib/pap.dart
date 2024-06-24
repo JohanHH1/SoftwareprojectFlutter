@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Pap extends StatelessWidget {
   const Pap({super.key});
 
+// funktion til at håndtere url, så den åbner i browser i appen
   void _papinfo() async {
     final link = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-pap');
@@ -147,10 +148,12 @@ class Pap extends StatelessWidget {
             ),
             Row(
               children: [
-                const Text(
+                const Flexible( // gør at teksten kun tage den plads den skal bruge, selvom den er i en row
+                child: Text(
                   'Du behøver ikke fjerne clips, tape, labels eller lignende ',
                 ),
-                GestureDetector(
+                ),
+                GestureDetector( // sender brugeren til linket ved at trykke på for mere information der indeholder linket
                   onTap: _papinfo,
                   child: const Text(
                     'for mere information',
