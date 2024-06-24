@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Affaldstyper.dart';
 import 'package:flutter_settings_bar_design/Glas.dart';
-import 'package:flutter_settings_bar_design/AffaldsInformationsSide.dart';
+import 'package:flutter_settings_bar_design/ItemDetailPage.dart';
 import 'package:flutter_settings_bar_design/Madaffald.dart';
 import 'package:flutter_settings_bar_design/Papir.dart';
-import 'package:flutter_settings_bar_design/Metal.dart';
-import 'package:flutter_settings_bar_design/Navigation_bar.dart';
-import 'package:flutter_settings_bar_design/Pap.dart';
+import 'package:flutter_settings_bar_design/metal.dart';
+import 'package:flutter_settings_bar_design/navigation_bar.dart';
+import 'package:flutter_settings_bar_design/pap.dart';
 import 'package:readmore/readmore.dart';
 // Material-pakken bruges før udseende og funktionalitet
 // ReadMore bruges til at håndtere længere tekststumper
@@ -59,12 +59,12 @@ class HomePage extends StatelessWidget {
                       scrollDirection: Axis.horizontal, // Vandret scrolling
                       children: [
                         GestureDetector(
-                          onTap: () { // Ved trykk på elementet, navigeres der til AffaldsInformationsSide med detaljer om produktet
+                          onTap: () { // Ved trykk på elementet, navigeres der til ItemDetailPage med detaljer om produktet
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const AffaldsInformationsSide(item: {
+                                      const ItemDetailPage(item: {
                                         'name': 'Sølvpapir',
                                         'category': 'Metal',
                                         'image': 'sølvpapir.png',
@@ -107,7 +107,7 @@ class HomePage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const AffaldsInformationsSide(item: {
+                                      const ItemDetailPage(item: {
                                         'name': 'Teblade og kaffegrums',
                                         'category': 'Madaffald',
                                         'image': 'kaffe.png',
@@ -149,7 +149,7 @@ class HomePage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const AffaldsInformationsSide(item: {
+                                      const ItemDetailPage(item: {
                                         'name': 'Mælkekarton',
                                         'category': 'Plast',
                                         'image': 'mælk.png',
@@ -191,7 +191,7 @@ class HomePage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const AffaldsInformationsSide(item: {
+                                      const ItemDetailPage(item: {
                                         'name': 'Skyrbøtte',
                                         'category': 'Plast',
                                         'image': 'skyr.png',
@@ -234,7 +234,7 @@ class HomePage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const AffaldsInformationsSide(item: {
+                                      const ItemDetailPage(item: {
                                         'name': 'Pizzabakke',
                                         'category': 'Restaffald',
                                         'image': 'pizzabox.png',
