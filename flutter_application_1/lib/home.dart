@@ -9,6 +9,8 @@ import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
 import 'package:flutter_settings_bar_design/pap.dart';
 import 'package:readmore/readmore.dart';
+// Material-pakken bruges før udseende og funktionalitet
+// ReadMore bruges til at håndtere længere tekststumper
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
