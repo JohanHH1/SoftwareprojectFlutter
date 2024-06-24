@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_bar_design/Home.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart'; // Importer filen med Firebase konfigurationen
 
 void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); // Sikrer at bindinger er initialiseret før runApp
-  await Firebase.initializeApp(
-      options: DefaultFirebaseOptions
-          .currentPlatform); // Initialiser Firebase med de korrekte konfigurationsindstillinger
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
