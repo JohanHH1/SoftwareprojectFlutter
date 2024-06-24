@@ -14,8 +14,7 @@ class LocationPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<LocationPage> {
-  String _errorMessage =
-      ''; // bruges kun til at opbevare fejl, men bliver aldrig vist
+  String _errorMessage =  ''; // bruges kun til at opbevare fejl, men bliver aldrig vist
   final MapController _mapController = MapController();
   final List<Marker> _markers1 = []; //genbrugspladser
   final List<Marker> _markers2 = []; //affalds containere
