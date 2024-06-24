@@ -6,9 +6,9 @@ import 'package:flutter_settings_bar_design/madaffald.dart';
 import 'package:flutter_settings_bar_design/metal.dart';
 import 'package:flutter_settings_bar_design/navigation_bar.dart';
 import 'package:flutter_settings_bar_design/pap.dart';
-import 'package:flutter_settings_bar_design/plast.dart';
-import 'package:flutter_settings_bar_design/restaffald.dart';
-import 'package:flutter_settings_bar_design/tekstilaffald.dart';
+import 'package:flutter_settings_bar_design/Plast.dart';
+import 'package:flutter_settings_bar_design/Restaffald.dart';
+import 'package:flutter_settings_bar_design/Tekstilaffald.dart';
 
 class Affaldstyper extends StatelessWidget {
   const Affaldstyper({super.key});

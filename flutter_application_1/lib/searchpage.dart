@@ -1,7 +1,7 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import 'ItemDetailPage.dart';
+import 'AffaldsInformationsSide.dart';
 
 class Searchpage extends StatefulWidget {
   @override
@@ -115,7 +115,7 @@ class _SearchpageState extends State<Searchpage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ItemDetailPage(item: item),
+                        builder: (context) => AffaldsInformationsSide(item: item),
                       ),
                     );
                   },

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 //Dataen om alt skraldet som f.eks. navn, kategori osv bliver vist hvor det skal.
 //Billeder ligger lokalt med appen, og tilgås med pathen samt navnet der kommer fra JSON filen.
 
-class ItemDetailPage extends StatelessWidget {
+class AffaldsInformationsSide extends StatelessWidget {
   //Tager imod det valgte skrald med alt det tilhørende information.
   final Map<String, dynamic> item;
 
-  const ItemDetailPage({super.key, required this.item});
+  const AffaldsInformationsSide({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {

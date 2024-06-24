@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_settings_bar_design/Home.dart';
-import 'main.dart';
+import 'package:flutter_settings_bar_design/HomePage.dart';
 import 'LocationPage.dart';
-import 'searchpage.dart';
+import 'Searchpage.dart';
 
 class NavigationBarr extends StatelessWidget {
   const NavigationBarr({super.key});
@@ -10,7 +9,6 @@ class NavigationBarr extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 68, // in logical pixels
       //height: 68, // in logical pixels
       padding: const EdgeInsets.symmetric(horizontal: 8),
       decoration:

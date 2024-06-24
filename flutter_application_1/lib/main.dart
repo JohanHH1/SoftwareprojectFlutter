@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_settings_bar_design/Home.dart';
+import 'package:flutter_settings_bar_design/HomePage.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
