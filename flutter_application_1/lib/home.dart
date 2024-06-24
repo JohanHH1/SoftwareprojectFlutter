@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( // Appbar med titel og styling
       appBar: AppBar(
         backgroundColor: const Color(-4072000),
         title: const Text(
@@ -26,27 +26,15 @@ class HomePage extends StatelessWidget {
             color: Color.fromARGB(255, 48, 40, 40),
           ),
         ),
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: false, // sjuler automatiske tilbageknap
         elevation: 0,
       ),
       backgroundColor: Colors.white,
-      body: Scrollbar(
-        child: SingleChildScrollView(
+      body: Scrollbar( // Scrollbar til lodret scrolling
+        child: SingleChildScrollView( // Gør hele kroppen scrollable
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /*  SizedBox(height: 20),
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text(
-                  'Velkommen!',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 112, 70, 7),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ), */
               const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text(
@@ -60,16 +48,16 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 30, 12, 30),
-                child: Scrollbar(
-                  thickness: 2,
+                child: Scrollbar( // Scrollbar til vandret scrolling
+                  thickness: 2, // Tykkelse af scrollbar
                   trackVisibility: true,
                   child: SizedBox(
                     height: 210,
                     child: ListView(
-                      scrollDirection: Axis.horizontal,
+                      scrollDirection: Axis.horizontal, // Vandret scrolling
                       children: [
                         GestureDetector(
-                          onTap: () {
+                          onTap: () { // Ved trykk på elementet, navigeres der til ItemDetailPage med detaljer om produktet
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -179,7 +167,6 @@ class HomePage extends StatelessWidget {
                               Spacer(),
                               Text(
                                 'Mælkekarton',
-                                //textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 16,
@@ -286,27 +273,27 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Row(
+              const Row( // arrangerer børnene vandret
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Expanded(
                     child: Padding(
                       padding:
                           EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
-                      child: Column(
+                      child: Column( 
                         children: [
-                          ExpansionTile(
+                          ExpansionTile( // Første ExpansionTime
                             title: Text(
                                 'Sådan gør du med plastikproppen på papemballagen'),
                             children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
+                              Padding( 
+                                padding: EdgeInsets.all(8.0), 
                                 child: Text(
                                     'Det er ikke nødvendigt at fjerne kapslen før sortering. Hvis du lader kapslen sidde, vil papemballagen og plastkapslen blive adskilt og materialegenanvendt korrekt. Det er bedre at lade kapslen sidde end at risikere, at den falder af og ender i naturen.'),
                               ),
                             ],
                           ),
-                          ExpansionTile(
+                          ExpansionTile( // Anden ExpansionTile
                             title: Text('Hvorfor skal jeg sortere batterier?'),
                             children: <Widget>[
                               Padding(
@@ -319,7 +306,7 @@ class HomePage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          ExpansionTile(
+                          ExpansionTile( // Trejde ExpansionTile
                             title: Text(
                                 'Sådan genanvender du 5 almindelige take-away emballager'),
                             children: <Widget>[
@@ -341,7 +328,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-const Padding(
+const Padding( // Padding omkring teksten 'Affaldstyper'
   padding: EdgeInsets.only(left: 16, right: 10, top: 20, bottom: 10),
   child: Text(
     'Affaldstyper',
@@ -353,10 +340,10 @@ const Padding(
   ),
 ),
 
-              Row(
+              Row( // Arrangerer 'Vis alle' knappen til højre
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(
+                  TextButton( // Navigerer til klassen 'Affaldstyper' vid trykk
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -368,14 +355,15 @@ const Padding(
                   ),
                 ],
               ),
-              Padding(
+              Padding( // Padding før afstand omkring horisontale ListVeiw 
                 padding: const EdgeInsets.fromLTRB(12, 1, 12, 40),
                 child: SizedBox(
                   height: 160,
                   child: Scrollbar(
-                    child: ListView(
+                    child: ListView( // Viser en horisontal liste af affaldstyper
                       scrollDirection: Axis.horizontal,
-                      children: [
+                      children: [ // GestureDetector widget til at håndtere tryk på ikon billedet
+      
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
@@ -494,7 +482,7 @@ const Padding(
               ),
               const Padding(
                 padding: EdgeInsets.all(7.0),
-                child: Column(
+                child: Column(  // Arrangere teksten lodret
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -505,7 +493,7 @@ const Padding(
                       ),
                     ),
                     SizedBox(height: 2),
-                    ReadMoreText(
+                    ReadMoreText( // ReadMoreText widget til at vise udvidbar tekst
                       'En nærgenbrugsstation er en mindre genbrugsstation placeret centralt i byen. '
                       'Her kan du give og tage gratis ting til genbrug (fx møbler, køkkenting, legetøj, bøger mv.), '
                       'og sortere udvalgte typer affald til genanvendelse.\n\n'
@@ -515,7 +503,7 @@ const Padding(
                       'På nærgenbrugsstationen kan du ikke aflevere byggeaffald og sanitetsudstyr (fx toilet og håndvask). '
                       'Det skal du aflevere på en af de store genbrugsstationer.\n\n',
                       trimLines: 1,
-                      colorClickableText: Colors.blue,
+                      colorClickableText: Colors.blue, // Fave til ReadMoreText
                       trimMode: TrimMode.Line,
                       trimCollapsedText: '...Læs mere',
                       trimExpandedText: ' Mindre',
@@ -528,7 +516,7 @@ const Padding(
                       ),
                     ),
                     SizedBox(height: 2),
-                    ReadMoreText(
+                    ReadMoreText( // ReadMoreText widget til at vise udvidbar tekst
                       'Der er fem genbrugsstationer i København. Her kan du aflevere og sortere dit affald i over 30 fraktioner.'
                       'Se hvad du kan aflevere på genbrugsstationen (a-r-c.dk)'
                       'Alle større genbrugsstationer har også områder, hvor du kan give og tage gratis ting til genbrug. Er du i tvivl om, hvad der kan genbruges, kan du altid spørge personalet.',
@@ -545,7 +533,7 @@ const Padding(
           ),
         ),
       ),
-      bottomNavigationBar: const NavigationBarr(),
+      bottomNavigationBar: const NavigationBarr(), // Navigationsbar i bunden
     );
   }
 }
