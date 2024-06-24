@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Metal extends StatelessWidget {
   const Metal({super.key});
 
+// funktion til at håndtere url, så den åbner i browser i appen
   void _metalinfo() async {
     final link = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-metal');
@@ -147,13 +148,13 @@ class Metal extends StatelessWidget {
             ),
             Row(
               children: [
-                const Flexible(
+                const Flexible( // gør at teksten kun tage den plads den skal bruge, selvom den er i en row
                 child: Text(
                   'Du behøver ikke skylle eller fjerne klistermærker ',
                 ),
             ),
-                GestureDetector(
-                  onTap: _metalinfo,
+                GestureDetector( // sender brugeren til linket ved at trykke på for mere information der indeholder linket
+                  onTap: _metalinfo, 
                   child: const Text(
                     'for mere information',
                     style: TextStyle(

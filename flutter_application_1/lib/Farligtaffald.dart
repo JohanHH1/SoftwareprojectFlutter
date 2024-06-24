@@ -1,17 +1,17 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Farligtaffald extends StatelessWidget {
   const Farligtaffald({super.key});
 
+// funktion til at håndtere url, så den åbner i browser i appen
   void _farligtinfo() async {
     final link = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-farligt-affald');
     if (await canLaunchUrl(link)) {
       await launchUrl(link);
     } else {
-      throw 'Kan ikke åbne $link';
+      throw 'Kan ikke åbne $link'; 
     }
   }
 
@@ -53,7 +53,7 @@ class Farligtaffald extends StatelessWidget {
                   maxWidth: 500, // Maximum width
                   maxHeight: 500, // Maximum height
                 ),
-                child: Image.asset(
+                child: Image.asset( // indsætter billeder
                   'assets/farligtinfo.png',
                   fit: BoxFit.cover,
                 ),
@@ -148,12 +148,12 @@ class Farligtaffald extends StatelessWidget {
             ),
             Row(
               children: [
-                Flexible(
+                const Flexible( // gør at teksten kun tage den plads den skal bruge, selvom den er i en row
                 child: Text(
                   'En god huskeregl er, at affald med faremærker må komme i kassen. Hvis du er tvivl mere, se evt. ',
                 ),
                 ),
-                GestureDetector(
+                GestureDetector( // sender brugeren til linket ved at trykke på for mere information der indeholder linket
                   onTap: _farligtinfo,
                   child: const Text(
                     'for mere information',

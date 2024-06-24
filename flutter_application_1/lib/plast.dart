@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Plast extends StatelessWidget {
   const Plast({super.key});
 
+// funktion til at håndtere url, så den åbner i browser i appen
   void _plastinfo() async {
     final link = Uri.parse(
         'https://affald.kk.dk/affaldsfraktion/saadan-sorterer-du-plast');
@@ -148,12 +149,12 @@ class Plast extends StatelessWidget {
             ),
             Row(
               children: [
-                Flexible(
+                const Flexible(  // gør at teksten kun tage den plads den skal bruge, selvom den er i en row
                 child: Text(
                   'Emballage, der har indeholdt mad eller drikke, skal tømmes, så godt du kan ',
                   ),
                 ),
-                GestureDetector(
+                GestureDetector( // sender brugeren til linket ved at trykke på for mere information der indeholder linket
                   onTap: _plastinfo,
                   child: const Text(
                     'for mere information',
